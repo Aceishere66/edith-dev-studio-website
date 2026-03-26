@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" fill="none">
+  <rect width="1200" height="630" fill="#070B14"/>
+  <rect x="60" y="60" width="1080" height="510" rx="28" fill="#0D1321" stroke="rgba(255,255,255,0.10)"/>
+  <circle cx="980" cy="145" r="120" fill="#7C5CFF" fill-opacity="0.25"/>
+  <circle cx="1035" cy="205" r="90" fill="#27D3FF" fill-opacity="0.18"/>
+  <text x="90" y="170" fill="#A9B4C7" font-family="Inter, Arial, sans-serif" font-size="28">EDITH Dev Studio</text>
+  <text x="90" y="255" fill="#F5F7FB" font-family="Inter, Arial, sans-serif" font-size="68" font-weight="800">Upscaler Studio</text>
+  <text x="90" y="320" fill="#A9B4C7" font-family="Inter, Arial, sans-serif" font-size="30">Local AI upscaling for Windows</text>
+
+  <rect x="90" y="380" width="310" height="90" rx="18" fill="#111A2C" stroke="rgba(255,255,255,0.10)"/>
+  <text x="120" y="435" fill="#F5F7FB" font-family="Inter, Arial, sans-serif" font-size="28" font-weight="700">Image + Video</text>
+
+  <rect x="430" y="380" width="250" height="90" rx="18" fill="#111A2C" stroke="rgba(255,255,255,0.10)"/>
+  <text x="460" y="435" fill="#F5F7FB" font-family="Inter, Arial, sans-serif" font-size="28" font-weight="700">Batch-ready</text>
+
+  <rect x="710" y="380" width="300" height="90" rx="18" fill="#111A2C" stroke="rgba(255,255,255,0.10)"/>
+  <text x="740" y="435" fill="#F5F7FB" font-family="Inter, Arial, sans-serif" font-size="28" font-weight="700">Windows-first</text>
+</svg>
