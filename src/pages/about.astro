@@ -1,37 +1,47 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
-import Header from '../components/Header.astro';
+import Navbar from '../components/Navbar.astro';
 import Footer from '../components/Footer.astro';
 ---
 
-<BaseLayout title="About EDITH Dev Studio" description="Learn more about EDITH Dev Studio and its premium Windows-first desktop tools.">
-  <Header />
+<BaseLayout
+  title="About EDITH Dev Studio"
+  description="Learn more about EDITH Dev Studio and its premium Windows-first desktop tools."
+>
+  <Navbar />
 
   <section class="legal-page">
-    <div class="narrow">
+    <div class="container narrow">
       <p class="eyebrow">About</p>
       <h1>EDITH Dev Studio</h1>
-      <p class="hero-copy" style="max-width:860px;">
-        EDITH Dev Studio is the publisher brand for Upscaler Studio and future premium Windows-first desktop products.
+      <p class="legal-note">
+        EDITH Dev Studio is the publisher brand behind Upscaler Studio and future premium Windows-first desktop products.
       </p>
 
-      <div class="grid-2" style="margin-top:2rem;">
-        <article class="card">
-          <h2>Studio role</h2>
-          <p class="copy" style="margin-top:1rem;">
-            Keep the studio identity broader than a single app so the website can grow into a multi-product hub.
-          </p>
-        </article>
-        <article class="card">
-          <h2>Current flagship</h2>
-          <p class="copy" style="margin-top:1rem;">
-            Upscaler Studio is the current lead product and should occupy the main conversion path of the site.
-          </p>
-        </article>
-      </div>
+      <section class="legal-block premium-panel">
+        <h2>What the studio is building</h2>
+        <p>
+          The studio direction is focused on serious desktop software with stronger product presentation,
+          cleaner commercial readiness, and a better user experience than disposable utility-grade tools.
+        </p>
+      </section>
+
+      <section class="legal-block premium-panel">
+        <h2>Current focus</h2>
+        <p>
+          Upscaler Studio is the first featured product and is positioned around local AI upscaling,
+          Windows-first workflows, and a premium product surface for image and video users.
+        </p>
+      </section>
+
+      <section class="legal-block premium-panel">
+        <h2>Future direction</h2>
+        <p>
+          The website and studio identity are designed to support multiple products over time, not only a single release.
+        </p>
+      </section>
     </div>
   </section>
 
   <Footer />
 </BaseLayout>
-

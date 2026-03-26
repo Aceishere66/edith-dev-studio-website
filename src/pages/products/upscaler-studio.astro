@@ -1,86 +1,131 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
-import Header from '../../components/Header.astro';
+import Navbar from '../../components/Navbar.astro';
 import Footer from '../../components/Footer.astro';
 ---
 
-<BaseLayout title="Upscaler Studio | EDITH Dev Studio" description="Discover Upscaler Studio, a local AI upscaling tool for Windows by EDITH Dev Studio.">
-  <Header />
+<BaseLayout
+  title="Upscaler Studio | EDITH Dev Studio"
+  description="Discover Upscaler Studio, a local AI upscaling tool for Windows by EDITH Dev Studio."
+>
+  <Navbar />
 
   <section class="hero">
-    <div class="orb one"></div>
-    <div class="orb two"></div>
+    <div class="hero-bg-orb orb-1"></div>
+    <div class="hero-bg-orb orb-2"></div>
+
     <div class="container hero-grid">
       <div>
-        <p class="eyebrow">Product page</p>
-        <h1>Upscaler Studio</h1>
+        <p class="eyebrow">Upscaler Studio · by EDITH Dev Studio</p>
+        <h1>Local AI upscaling for Windows.</h1>
         <p class="hero-copy">
-          Position Upscaler Studio as a premium local AI upscaling desktop tool for Windows, focused on image and video workflows,
-          batch processing, compare/history visibility, and stronger runtime control.
+          Upscaler Studio is being shaped as a premium Windows-first desktop tool for image and video upscaling,
+          built around local processing, batch workflows, compare tools, history, and a stronger product experience.
         </p>
+
         <div class="cta-row">
           <a class="btn btn-primary" href="/download">Download trial</a>
-          <a class="btn btn-secondary" href="/pricing">Buy license</a>
+          <a class="btn btn-secondary" href="/pricing">View pricing</a>
         </div>
-      </div>
 
-      <div class="hero-card float-panel">
-        <div class="window-dots"><span></span><span></span><span></span></div>
-        <div class="preview-grid">
-          <div class="preview-box input">Queue input</div>
-          <div class="process-card">
-            <strong>Batch execution</strong>
-            <p class="muted">Recommended model, status tracking, compare flow.</p>
-            <div class="progress"><i></i></div>
+        <div class="hero-stats">
+          <div>
+            <strong>Local-first</strong>
+            <span>Processing direction</span>
           </div>
-          <div class="preview-box output">Review export</div>
+          <div>
+            <strong>Image + Video</strong>
+            <span>One product surface</span>
+          </div>
+          <div>
+            <strong>Batch-ready</strong>
+            <span>Workflow focus</span>
+          </div>
         </div>
       </div>
-    </div>
-  </section>
 
-  <section class="section alt">
-    <div class="container">
-      <div class="section-head">
-        <p class="eyebrow">What to communicate</p>
-        <h2>The product story should stay disciplined.</h2>
-      </div>
-      <div class="grid-2">
-        <article class="card">
-          <h3>Core positioning</h3>
-          <ul class="checks">
-            <li>Local AI upscaling for Windows</li>
-            <li>Image and video workflows</li>
-            <li>Batch, compare, history, control</li>
-            <li>Premium desktop UX direction</li>
-          </ul>
-        </article>
-        <article class="card">
-          <h3>Avoid overclaiming</h3>
-          <ul class="checks">
-            <li>Do not promise final compliance until release gates are closed</li>
-            <li>Do not promise enterprise guarantees you do not yet support</li>
-            <li>Keep legal and support details honest and explicit</li>
-          </ul>
-        </article>
+      <div class="hero-card premium-panel float-panel">
+        <div class="hero-appbar">
+          <span></span><span></span><span></span>
+        </div>
+        <div class="preview-shell">
+          <div class="preview-block low">Input preview</div>
+          <div class="process-card">
+            <div class="process-head">
+              <strong>AI preset active</strong>
+              <small>Model recommendation direction</small>
+            </div>
+            <div class="bar"><i></i></div>
+          </div>
+          <div class="preview-block high">Enhanced output</div>
+        </div>
       </div>
     </div>
   </section>
 
   <section class="section">
     <div class="container">
-      <div class="section-head">
-        <p class="eyebrow">Feature framing</p>
-        <h2>What the site should highlight first</h2>
+      <p class="eyebrow">Why it matters</p>
+      <h2>A real product direction, not a disposable utility.</h2>
+      <div class="cards three">
+        <article class="card premium-panel">
+          <h3>Premium desktop positioning</h3>
+          <p>
+            The goal is a serious Windows-first product with stronger UX, clearer packaging, and a better commercial surface.
+          </p>
+        </article>
+        <article class="card premium-panel">
+          <h3>Local processing focus</h3>
+          <p>
+            Upscaler Studio is positioned around local control, stronger privacy posture, and reduced dependence on cloud workflows.
+          </p>
+        </article>
+        <article class="card premium-panel">
+          <h3>Workflow-oriented design</h3>
+          <p>
+            Compare, history, queueing, and guided processing direction aim to make the tool feel more complete and professional.
+          </p>
+        </article>
       </div>
-      <div class="grid-3">
-        <article class="card"><h3>Quality workflow</h3><p>Lead with output quality, repeatability, and control.</p></article>
-        <article class="card"><h3>Desktop trust</h3><p>Lean into local processing, inspectability, and user ownership.</p></article>
-        <article class="card"><h3>Professional usability</h3><p>Show that the product is guided and premium, not just technical.</p></article>
+    </div>
+  </section>
+
+  <section class="section alt">
+    <div class="container">
+      <p class="eyebrow">Core product direction</p>
+      <h2>What Upscaler Studio is designed to offer.</h2>
+      <div class="cards three">
+        <article class="card premium-panel">
+          <h3>Image and video workflows</h3>
+          <p>One product identity built around both still-image enhancement and video-oriented processing direction.</p>
+        </article>
+        <article class="card premium-panel">
+          <h3>Batch and review flow</h3>
+          <p>Queue-based processing, result review, compare direction, and history visibility for more consistent work.</p>
+        </article>
+        <article class="card premium-panel">
+          <h3>Windows-first product experience</h3>
+          <p>A desktop product feel that aims higher than a typical wrapper around command-line tools.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container cta-panel premium-panel glow-border">
+      <div>
+        <p class="eyebrow">Launch path</p>
+        <h2>Start with a trial. Upgrade when the product proves itself.</h2>
+        <p>
+          The current go-to-market direction is a simple, premium launch model: a trial path plus a single clear paid license.
+        </p>
+      </div>
+      <div class="cta-stack">
+        <a class="btn btn-primary" href="/download">Download trial</a>
+        <a class="btn btn-secondary" href="/pricing">Pricing</a>
       </div>
     </div>
   </section>
 
   <Footer />
 </BaseLayout>
-

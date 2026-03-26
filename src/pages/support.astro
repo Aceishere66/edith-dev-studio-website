@@ -1,41 +1,47 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
-import Header from '../components/Header.astro';
+import Navbar from '../components/Navbar.astro';
 import Footer from '../components/Footer.astro';
 ---
 
-<BaseLayout title="Support — Upscaler Studio | EDITH Dev Studio" description="Get support for Upscaler Studio by EDITH Dev Studio.">
-  <Header />
+<BaseLayout
+  title="Support — Upscaler Studio | EDITH Dev Studio"
+  description="Get support for Upscaler Studio by EDITH Dev Studio."
+>
+  <Navbar />
 
   <section class="legal-page">
-    <div class="narrow">
+    <div class="container narrow">
       <p class="eyebrow">Support</p>
-      <h1>Support structure</h1>
-      <p class="hero-copy" style="max-width:860px;">
-        This page should become the operational support layer for the product once release blockers are fixed.
+      <h1>Support</h1>
+      <p class="legal-note">
+        This page should evolve into the main customer support surface for Upscaler Studio.
       </p>
 
-      <div class="grid-2" style="margin-top:2rem;">
-        <article class="card">
-          <h2>Recommended content</h2>
-          <ul class="checks">
-            <li>Support email</li>
-            <li>Response policy</li>
-            <li>Activation help</li>
-            <li>Download/install troubleshooting</li>
-            <li>Log export instructions</li>
-          </ul>
-        </article>
+      <section class="legal-block premium-panel">
+        <h2>What users should find here</h2>
+        <p>
+          Support contact details, troubleshooting guidance, installation help, license assistance,
+          and release-specific notes should be centralized here.
+        </p>
+      </section>
 
-        <article class="card">
-          <h2>Draft contact</h2>
-          <p class="copy" style="margin-top:1rem;">hello@edithdevstudio.com</p>
-          <p class="copy">Replace with the real support address before publication.</p>
-        </article>
-      </div>
+      <section class="legal-block premium-panel">
+        <h2>Recommended future sections</h2>
+        <p>
+          Add a support email, FAQ, system requirements, known issues, activation help, refund guidance,
+          and links to changelog or release notes.
+        </p>
+      </section>
+
+      <section class="legal-block premium-panel">
+        <h2>Current status</h2>
+        <p>
+          This is still a structured placeholder page, but it now reflects the intended support role more clearly.
+        </p>
+      </section>
     </div>
   </section>
 
   <Footer />
 </BaseLayout>
-
