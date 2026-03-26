@@ -1,0 +1,33 @@
+<section id="features" class="section">
+  <div class="container">
+    <p class="eyebrow">Core capabilities</p>
+    <h2>A real product surface, not a script wrapper.</h2>
+
+    <div class="cards three premium-cards">
+      <article class="card premium-panel">
+        <h3>Windows desktop workflow</h3>
+        <p>Polished launcher flow, guided UX direction, and a product feel above simple utility tooling.</p>
+      </article>
+      <article class="card premium-panel">
+        <h3>Image and video upscaling</h3>
+        <p>Designed around mixed media workflows, queueing, comparison, history, and output control.</p>
+      </article>
+      <article class="card premium-panel">
+        <h3>Local-first processing</h3>
+        <p>Core work is positioned around the user machine instead of depending on cloud processing.</p>
+      </article>
+      <article class="card premium-panel">
+        <h3>Model intelligence foundation</h3>
+        <p>Recommendation logic, visible catalog direction, and compatibility-aware productization path.</p>
+      </article>
+      <article class="card premium-panel">
+        <h3>Batch and compare</h3>
+        <p>Built for repeatable processing, quality checks, and workflow continuity instead of one-off exports.</p>
+      </article>
+      <article class="card premium-panel">
+        <h3>Commercial-ready direction</h3>
+        <p>Packaging, support, legal placeholders, and installer paths already point toward a sellable product.</p>
+      </article>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,52 @@
+<section class="hero">
+  <div class="hero-bg-orb orb-1"></div>
+  <div class="hero-bg-orb orb-2"></div>
+
+  <div class="container hero-grid">
+    <div>
+      <p class="eyebrow">Upscaler Studio · by EDITH Dev Studio</p>
+      <h1>Upscale locally. Export confidently.</h1>
+      <p class="hero-copy">
+        A premium Windows-first AI upscaling tool for images and video, designed around local processing,
+        batch workflows, compare tools, and a stronger desktop product experience.
+      </p>
+
+      <div class="cta-row">
+        <a class="btn btn-primary" href="/download">Download trial</a>
+        <a class="btn btn-secondary" href="/pricing">Buy license</a>
+      </div>
+
+      <div class="hero-stats">
+        <div>
+          <strong>Image + Video</strong>
+          <span>One workflow</span>
+        </div>
+        <div>
+          <strong>Local-first</strong>
+          <span>Windows processing</span>
+        </div>
+        <div>
+          <strong>Batch-ready</strong>
+          <span>Queue and compare</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="hero-card premium-panel float-panel">
+      <div class="hero-appbar">
+        <span></span><span></span><span></span>
+      </div>
+      <div class="preview-shell">
+        <div class="preview-block low">Input</div>
+        <div class="process-card">
+          <div class="process-head">
+            <strong>AI preset active</strong>
+            <small>Model recommendation ready</small>
+          </div>
+          <div class="bar"><i></i></div>
+        </div>
+        <div class="preview-block high">Output</div>
+      </div>
+    </div>
+  </div>
+</section>

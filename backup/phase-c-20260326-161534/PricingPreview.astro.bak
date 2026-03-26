@@ -1,0 +1,34 @@
+<section class="section alt">
+  <div class="container">
+    <p class="eyebrow">Pricing strategy</p>
+    <h2>Start simple. Price like a premium indie desktop tool.</h2>
+
+    <div class="pricing-grid">
+      <article class="card premium-panel price-card muted-price">
+        <p class="plan-label">Trial</p>
+        <h3>Free</h3>
+        <p>Ideal for testing quality, speed, and compatibility before buying.</p>
+        <ul>
+          <li>Download access</li>
+          <li>Limited usage or evaluation mode</li>
+          <li>No long-term commitment</li>
+        </ul>
+        <a class="btn btn-secondary" href="/download">Get trial</a>
+      </article>
+
+      <article class="card premium-panel price-card featured-price">
+        <div class="badge">Recommended</div>
+        <p class="plan-label">Studio License</p>
+        <h3>€49</h3>
+        <p>Best first-launch pricing test for a premium local desktop utility.</p>
+        <ul>
+          <li>1 PC license</li>
+          <li>Full export workflow</li>
+          <li>Core future updates policy</li>
+          <li>Commercial checkout ready</li>
+        </ul>
+        <a class="btn btn-primary" href="/pricing">Buy license</a>
+      </article>
+    </div>
+  </div>
+</section>

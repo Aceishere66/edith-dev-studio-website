@@ -1,35 +1,24 @@
 <footer class="site-footer">
   <div class="container footer-grid">
     <div>
-      <a href="/" class="brand" aria-label="EDITH Dev Studio home">
-        <span class="brand-mark">E</span>
-        <span>
-          <small>Publisher</small>
-          <strong>EDITH Dev Studio</strong>
-        </span>
-      </a>
-
-      <p class="muted" style="margin-top: 1rem;">
+      <h3>EDITH Dev Studio</h3>
+      <p>
         Publisher brand for Upscaler Studio and future premium Windows-first desktop software.
-      </p>
-
-      <p class="muted" style="margin-top: .75rem;">
-        Current site copy, pricing, and release availability remain subject to product release gates.
       </p>
     </div>
 
     <div>
-      <h3>Explore</h3>
+      <h4>Product</h4>
       <ul class="footer-list">
-        <li><a href="/products">Products</a></li>
         <li><a href="/products/upscaler-studio">Upscaler Studio</a></li>
-        <li><a href="/about">About</a></li>
+        <li><a href="/pricing">Pricing</a></li>
+        <li><a href="/download">Download</a></li>
         <li><a href="/support">Support</a></li>
       </ul>
     </div>
 
     <div>
-      <h3>Legal & support</h3>
+      <h4>Legal</h4>
       <ul class="footer-list">
         <li><a href="/privacy">Privacy Policy</a></li>
         <li><a href="/terms">Terms of Service</a></li>

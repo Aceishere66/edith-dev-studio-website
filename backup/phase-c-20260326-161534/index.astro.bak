@@ -1,0 +1,49 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Navbar from '../components/Navbar.astro';
+import Hero from '../components/Hero.astro';
+import TrustStrip from '../components/TrustStrip.astro';
+import FeatureGrid from '../components/FeatureGrid.astro';
+import PricingPreview from '../components/PricingPreview.astro';
+import DownloadPanel from '../components/DownloadPanel.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<BaseLayout
+  title="EDITH Dev Studio — Premium Windows-first desktop tools"
+  description="Discover Upscaler Studio by EDITH Dev Studio, a local AI upscaling tool for Windows focused on image and video workflows."
+>
+  <Navbar />
+  <Hero />
+
+  <section class="section">
+    <div class="container">
+      <p class="eyebrow">Featured product</p>
+      <h2>Built for creators who want local control.</h2>
+      <div class="cta-panel premium-panel glow-border">
+        <div>
+          <p class="legal-note">
+            Upscaler Studio is a Windows-first local AI upscaling tool designed for image and video workflows,
+            with a stronger product feel than simple script-based utilities.
+          </p>
+          <ul class="legal-note">
+            <li>Image and video pipeline direction</li>
+            <li>Batch-ready processing</li>
+            <li>Compare and history workflow</li>
+            <li>Local-first positioning for stronger privacy and control</li>
+          </ul>
+        </div>
+        <div class="cta-stack">
+          <a class="btn btn-primary" href="/products/upscaler-studio">View product</a>
+          <a class="btn btn-secondary" href="/download">Download trial</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <TrustStrip />
+  <FeatureGrid />
+  <PricingPreview />
+  <DownloadPanel />
+  <Footer />
+</BaseLayout>

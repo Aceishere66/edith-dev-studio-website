@@ -11,39 +11,90 @@ import Footer from '../components/Footer.astro';
 
 <BaseLayout
   title="EDITH Dev Studio — Premium Windows-first desktop tools"
-  description="Discover Upscaler Studio by EDITH Dev Studio, a local AI upscaling tool for Windows focused on image and video workflows."
+  description="EDITH Dev Studio is building premium Windows-first desktop software. Discover Upscaler Studio, our featured local-first AI upscaling product."
 >
-  <Navbar />
-  <Hero />
+  <div class="site-shell">
+    <Navbar />
 
-  <section class="section">
-    <div class="container">
-      <p class="eyebrow">Featured product</p>
-      <h2>Built for creators who want local control.</h2>
-      <div class="cta-panel premium-panel glow-border">
-        <div>
-          <p class="legal-note">
-            Upscaler Studio is a Windows-first local AI upscaling tool designed for image and video workflows,
-            with a stronger product feel than simple script-based utilities.
-          </p>
-          <ul class="legal-note">
-            <li>Image and video pipeline direction</li>
-            <li>Batch-ready processing</li>
-            <li>Compare and history workflow</li>
-            <li>Local-first positioning for stronger privacy and control</li>
-          </ul>
-        </div>
-        <div class="cta-stack">
-          <a class="btn btn-primary" href="/products/upscaler-studio">View product</a>
-          <a class="btn btn-secondary" href="/download">Download trial</a>
-        </div>
-      </div>
-    </div>
-  </section>
+    <main>
+      <Hero />
+      <TrustStrip />
 
-  <TrustStrip />
-  <FeatureGrid />
-  <PricingPreview />
-  <DownloadPanel />
-  <Footer />
+      <section class="section">
+        <div class="container">
+          <div class="section-head">
+            <p class="eyebrow">Featured product</p>
+            <h2>One publisher. One flagship product. A clear direction.</h2>
+            <p class="lead">
+              EDITH Dev Studio is the publisher brand. Upscaler Studio is the first featured product: a local-first Windows desktop tool designed for serious image and video upscaling workflows.
+            </p>
+          </div>
+
+          <div class="product-band product-band-home">
+            <div class="grid-2">
+              <div>
+                <h3>Why the structure matters</h3>
+                <p class="muted" style="margin-top: .75rem;">
+                  Keeping publisher and product distinct makes the site easier to scale, easier to understand, and more credible for future launches.
+                </p>
+
+                <ul class="checks">
+                  <li>EDITH Dev Studio stays the umbrella brand</li>
+                  <li>Upscaler Studio gets a dedicated product surface</li>
+                  <li>The homepage stays focused on hierarchy and clarity</li>
+                </ul>
+              </div>
+
+              <div>
+                <h3>Why Upscaler Studio leads</h3>
+                <p class="muted" style="margin-top: .75rem;">
+                  The first product page should quickly explain local-first value, workflow seriousness, and the intended launch model without overclaiming availability.
+                </p>
+
+                <div class="cta-row" style="margin-top: 1.25rem;">
+                  <a href="/products/upscaler-studio" class="btn btn-primary">View product</a>
+                  <a href="/about" class="btn btn-secondary">About the studio</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <FeatureGrid />
+      <PricingPreview />
+      <DownloadPanel />
+
+      <section class="section alt">
+        <div class="container">
+          <div class="section-head">
+            <p class="eyebrow">Studio direction</p>
+            <h2>Designed as a product site first, not a throwaway landing page.</h2>
+            <p class="lead">
+              The current goal is a premium foundation: stronger hierarchy, clearer messaging, and a more serious surface for future screenshots, legal pages, support, and checkout integration.
+            </p>
+          </div>
+
+          <div class="grid-3">
+            <article class="card">
+              <h3>Stronger hierarchy</h3>
+              <p style="margin-top: .7rem;">The homepage should explain the publisher, the featured product, and the local-first value proposition in seconds.</p>
+            </article>
+
+            <article class="card">
+              <h3>More credible product framing</h3>
+              <p style="margin-top: .7rem;">Upscaler Studio should feel like a serious product page now, even before final screenshots and commercial integrations arrive.</p>
+            </article>
+
+            <article class="card">
+              <h3>Ready for the next pass</h3>
+              <p style="margin-top: .7rem;">Once release gates are closed, the next layer is final copy, legal refinement, support contact polish, and checkout activation.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <Footer />
+  </div>
 </BaseLayout>
