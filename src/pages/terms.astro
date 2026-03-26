@@ -1,0 +1,40 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<BaseLayout title="Terms of Service — Upscaler Studio" description="Terms of service draft for Upscaler Studio.">
+  <Header />
+
+  <section class="legal-page">
+    <div class="narrow">
+      <p class="eyebrow">Legal</p>
+      <h1>Terms of Service</h1>
+      <p class="hero-copy" style="max-width:860px;">
+        This is a publication draft. Final legal review is still required.
+      </p>
+
+      <div class="legal-stack">
+        <section class="legal-block">
+          <h2>1. Product scope</h2>
+          <p>Upscaler Studio is software licensed to the user under the final commercial terms of the published release.</p>
+        </section>
+        <section class="legal-block">
+          <h2>2. License model</h2>
+          <p>The website currently assumes a free trial path and a main paid Studio License. Final activation and entitlement logic must match the shipped product.</p>
+        </section>
+        <section class="legal-block">
+          <h2>3. Payments and refunds</h2>
+          <p>Replace with the real checkout provider, refund rules, and support obligations.</p>
+        </section>
+        <section class="legal-block">
+          <h2>4. Third-party components</h2>
+          <p>Do not claim exclusive rights over bundled third-party components where their own licenses apply.</p>
+        </section>
+      </div>
+    </div>
+  </section>
+
+  <Footer />
+</BaseLayout>

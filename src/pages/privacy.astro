@@ -1,0 +1,48 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<BaseLayout title="Privacy Policy — EDITH Dev Studio" description="Privacy policy draft for EDITH Dev Studio and Upscaler Studio.">
+  <Header />
+
+  <section class="legal-page">
+    <div class="narrow">
+      <p class="eyebrow">Legal</p>
+      <h1>Privacy Policy</h1>
+      <p class="hero-copy" style="max-width:860px;">
+        Structured draft only. Replace placeholders and confirm the real operational stack before publication.
+      </p>
+
+      <div class="notice warning-card" style="margin-top:1.5rem;">
+        <strong>Before publishing:</strong> add the real legal identity, privacy email, hosting provider, analytics provider, payment provider, retention periods, and transfer details.
+      </div>
+
+      <div class="legal-stack">
+        <section class="legal-block">
+          <h2>1. Data controller</h2>
+          <p>[EDITH legal identity], [registered address], [privacy email].</p>
+        </section>
+        <section class="legal-block">
+          <h2>2. Data processed</h2>
+          <p>Navigation data, contact form submissions, purchase and licensing data, and technical support data where applicable.</p>
+        </section>
+        <section class="legal-block">
+          <h2>3. Purpose</h2>
+          <p>Service delivery, license fulfillment, support, legal compliance, security, and optional analytics if activated.</p>
+        </section>
+        <section class="legal-block">
+          <h2>4. Retention</h2>
+          <p>Define concrete retention windows for each category instead of generic wording.</p>
+        </section>
+        <section class="legal-block">
+          <h2>5. Rights</h2>
+          <p>Access, rectification, deletion, restriction, objection, portability, and complaint rights should be described according to the applicable law.</p>
+        </section>
+      </div>
+    </div>
+  </section>
+
+  <Footer />
+</BaseLayout>

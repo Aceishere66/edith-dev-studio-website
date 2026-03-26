@@ -1,0 +1,41 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<BaseLayout title="Download — Upscaler Studio" description="Download page for Upscaler Studio.">
+  <Header />
+
+  <section class="legal-page">
+    <div class="narrow">
+      <p class="eyebrow">Download</p>
+      <h1>Get Upscaler Studio for Windows.</h1>
+      <p class="hero-copy" style="max-width:860px;">
+        Keep this page ready now, then connect the real installer and release notes when the software side clears the mandatory release gates.
+      </p>
+
+      <div class="grid-2" style="margin-top:2rem;">
+        <article class="card">
+          <h2>Trial build</h2>
+          <p class="copy" style="margin-top:1rem;">Version: <strong>v0.1.0</strong></p>
+          <p class="copy">Platform: Windows 10 / 11 64-bit</p>
+          <p class="copy">Channel: draft placeholder</p>
+          <div class="cta-row"><a class="btn btn-primary" href="#">Download installer</a></div>
+        </article>
+
+        <article class="card">
+          <h2>Before publishing</h2>
+          <ul class="checks">
+            <li>Connect real installer URL</li>
+            <li>Add checksum if desired</li>
+            <li>Link changelog</li>
+            <li>Confirm support channel</li>
+          </ul>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <Footer />
+</BaseLayout>

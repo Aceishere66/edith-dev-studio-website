@@ -1,0 +1,26 @@
+---
+const links = [
+  { href: '/', label: 'Home' },
+  { href: '/products/upscaler-studio', label: 'Product' },
+  { href: '/pricing', label: 'Pricing' },
+  { href: '/download', label: 'Download' },
+  { href: '/support', label: 'Support' },
+  { href: '/privacy', label: 'Privacy' }
+];
+---
+
+<header class="site-header">
+  <div class="container nav">
+    <a href="/" class="brand">
+      <span class="brand-mark">E</span>
+      <span>
+        <small>EDITH Dev Studio</small>
+        <strong>Upscaler Studio</strong>
+      </span>
+    </a>
+
+    <nav class="nav-links">
+      {links.map((item) => <a href={item.href}>{item.label}</a>)}
+    </nav>
+  </div>
+</header>
