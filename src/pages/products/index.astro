@@ -5,30 +5,49 @@ import Footer from '../../components/Footer.astro';
 ---
 
 <BaseLayout
-  title="Products | EDITH Dev Studio"
-  description="Explore products by EDITH Dev Studio, including Upscaler Studio."
+  title="Products — EDITH Dev Studio"
+  description="Explore products from EDITH Dev Studio. Upscaler Studio is the first featured product, with more Windows-first desktop tools planned over time."
 >
-  <Navbar />
+  <div class="site-shell">
+    <Navbar />
 
-  <section class="legal-page">
-    <div class="container narrow">
-      <p class="eyebrow">Products</p>
-      <h1>Products</h1>
-      <p class="legal-note">
-        EDITH Dev Studio is being structured as a product studio. Upscaler Studio is the first product in the ecosystem.
-      </p>
+    <main>
+      <section class="section page-top-safe">
+        <div class="container">
+          <div class="section-head">
+            <p class="eyebrow">Products</p>
+            <h1>Products</h1>
+            <p class="lead">
+              EDITH Dev Studio is being built as a focused product studio. Upscaler Studio is the first featured release in a broader Windows-first desktop direction.
+            </p>
+          </div>
 
-      <div class="cards two">
-        <article class="card premium-panel">
-          <h2>Upscaler Studio</h2>
-          <p>
-            Local AI upscaling for Windows with a premium desktop-product direction focused on image and video workflows.
-          </p>
-          <a class="btn btn-primary" href="/products/upscaler-studio">Open product page</a>
-        </article>
-      </div>
-    </div>
-  </section>
+          <div class="grid-2">
+            <article class="card" style="padding: 1.5rem;">
+              <h2 style="font-size: clamp(2.2rem, 6vw, 4rem); line-height: .95;">Upscaler Studio</h2>
+              <p class="lead" style="margin-top: .85rem;">
+                Local AI upscaling for Windows with a premium desktop-product direction focused on image and video workflows.
+              </p>
 
-  <Footer />
+              <div class="cta-row" style="margin-top: 1.25rem;">
+                <a href="/products/upscaler-studio" class="btn btn-primary">Open product page</a>
+              </div>
+            </article>
+
+            <article class="card" style="padding: 1.5rem;">
+              <h3>More products over time</h3>
+              <p style="margin-top: .75rem;">
+                EDITH Dev Studio is intentionally structured as a studio brand, not a single-product microsite. New Windows-first tools can be added under the same publisher identity as the catalogue grows.
+              </p>
+              <p class="muted" style="margin-top: 1rem;">
+                Current focus remains on refining Upscaler Studio and preparing its release path responsibly.
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <Footer />
+  </div>
 </BaseLayout>

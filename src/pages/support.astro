@@ -5,43 +5,50 @@ import Footer from '../components/Footer.astro';
 ---
 
 <BaseLayout
-  title="Support — Upscaler Studio | EDITH Dev Studio"
-  description="Get support for Upscaler Studio by EDITH Dev Studio."
+  title="Support — EDITH Dev Studio"
+  description="Get support information for Upscaler Studio and contact EDITH Dev Studio for product questions and release-related updates."
 >
-  <Navbar />
+  <div class="site-shell">
+    <Navbar />
 
-  <section class="legal-page">
-    <div class="container narrow">
-      <p class="eyebrow">Support</p>
-      <h1>Support</h1>
-      <p class="legal-note">
-        This page should evolve into the main customer support surface for Upscaler Studio.
-      </p>
+    <main>
+      <section class="section page-top-safe">
+        <div class="container">
+          <div class="section-head">
+            <p class="eyebrow">Support</p>
+            <h1>Support</h1>
+            <p class="lead">
+              This page is the support entry point for Upscaler Studio and future products from EDITH Dev Studio.
+            </p>
+          </div>
 
-      <section class="legal-block premium-panel">
-        <h2>What users should find here</h2>
-        <p>
-          Support contact details, troubleshooting guidance, installation help, license assistance,
-          and release-specific notes should be centralized here.
-        </p>
+          <div class="grid-3">
+            <article class="card">
+              <h3>General contact</h3>
+              <p style="margin-top: .75rem;">
+                For general product questions and release-related updates, contact
+                <a href="mailto:hello@edithdevstudio.com">hello@edithdevstudio.com</a>.
+              </p>
+            </article>
+
+            <article class="card">
+              <h3>Before reaching out</h3>
+              <p style="margin-top: .75rem;">
+                When support resources expand, this section should help users check system requirements, installation steps, release notes, and common troubleshooting items first.
+              </p>
+            </article>
+
+            <article class="card">
+              <h3>What will be added</h3>
+              <p style="margin-top: .75rem;">
+                Future support material can include FAQs, activation help, known issues, installation guidance, and links to changelog or release notes.
+              </p>
+            </article>
+          </div>
+        </div>
       </section>
+    </main>
 
-      <section class="legal-block premium-panel">
-        <h2>Recommended future sections</h2>
-        <p>
-          Add a support email, FAQ, system requirements, known issues, activation help, refund guidance,
-          and links to changelog or release notes.
-        </p>
-      </section>
-
-      <section class="legal-block premium-panel">
-        <h2>Current status</h2>
-        <p>
-          This is still a structured placeholder page, but it now reflects the intended support role more clearly.
-        </p>
-      </section>
-    </div>
-  </section>
-
-  <Footer />
+    <Footer />
+  </div>
 </BaseLayout>

@@ -507,3 +507,7 @@ li,
     width: 100%;
   }
 }
+
+.page-top-safe {
+  padding-top: clamp(7.5rem, 10vw, 9.5rem);
+}

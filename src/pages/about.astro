@@ -5,43 +5,49 @@ import Footer from '../components/Footer.astro';
 ---
 
 <BaseLayout
-  title="About EDITH Dev Studio"
-  description="Learn more about EDITH Dev Studio and its premium Windows-first desktop tools."
+  title="About — EDITH Dev Studio"
+  description="Learn about EDITH Dev Studio, the publisher brand behind Upscaler Studio and future premium Windows-first desktop products."
 >
-  <Navbar />
+  <div class="site-shell">
+    <Navbar />
 
-  <section class="legal-page">
-    <div class="container narrow">
-      <p class="eyebrow">About</p>
-      <h1>EDITH Dev Studio</h1>
-      <p class="legal-note">
-        EDITH Dev Studio is the publisher brand behind Upscaler Studio and future premium Windows-first desktop products.
-      </p>
+    <main>
+      <section class="section page-top-safe">
+        <div class="container">
+          <div class="section-head">
+            <p class="eyebrow">About</p>
+            <h1>About EDITH Dev Studio</h1>
+            <p class="lead">
+              EDITH Dev Studio is the publisher brand behind Upscaler Studio and future premium Windows-first desktop products.
+            </p>
+          </div>
 
-      <section class="legal-block premium-panel">
-        <h2>What the studio is building</h2>
-        <p>
-          The studio direction is focused on serious desktop software with stronger product presentation,
-          cleaner commercial readiness, and a better user experience than disposable utility-grade tools.
-        </p>
+          <div class="grid-3">
+            <article class="card">
+              <h3>What the studio is building</h3>
+              <p style="margin-top: .75rem;">
+                The studio direction is focused on serious desktop software with stronger product presentation, cleaner commercial readiness, and a better user experience than disposable utility-grade tools.
+              </p>
+            </article>
+
+            <article class="card">
+              <h3>Current focus</h3>
+              <p style="margin-top: .75rem;">
+                Upscaler Studio is the first featured product and is positioned around local AI upscaling, Windows-first workflows, and a premium product surface for image and video users.
+              </p>
+            </article>
+
+            <article class="card">
+              <h3>Future direction</h3>
+              <p style="margin-top: .75rem;">
+                The website and studio identity are designed to support multiple products over time, not only a single release.
+              </p>
+            </article>
+          </div>
+        </div>
       </section>
+    </main>
 
-      <section class="legal-block premium-panel">
-        <h2>Current focus</h2>
-        <p>
-          Upscaler Studio is the first featured product and is positioned around local AI upscaling,
-          Windows-first workflows, and a premium product surface for image and video users.
-        </p>
-      </section>
-
-      <section class="legal-block premium-panel">
-        <h2>Future direction</h2>
-        <p>
-          The website and studio identity are designed to support multiple products over time, not only a single release.
-        </p>
-      </section>
-    </div>
-  </section>
-
-  <Footer />
+    <Footer />
+  </div>
 </BaseLayout>
