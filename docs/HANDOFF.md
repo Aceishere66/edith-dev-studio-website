@@ -12,6 +12,10 @@ Phase 4A branch:
 
 `codex/premium-motion-interaction-pass`
 
+Phase 4B branch:
+
+`codex/premium-asset-integration-pass`
+
 ## What Changed
 
 - Added `.vs/` to `.gitignore` so local Visual Studio files stay out of the repo.
@@ -45,9 +49,13 @@ Phase 4A branch:
 
 ## Required Real Assets
 
-- App screenshot.
-- Before/after comparison.
-- Product mockup.
+- Homepage hero product screenshot.
+- Product page main app screenshot.
+- Before/after image example 1.
+- Before/after image example 2.
+- Optional video workflow visual that does not imply plug-and-play video.
+- Product mockup frame.
+- Social/brand preview image.
 - Optional future 3D/interactive product moment.
 
 Use `docs/ASSET_INTAKE.md` for dimensions, naming, and licensing rules.
@@ -66,6 +74,19 @@ No dependency upgrades were performed. Do not run `npm audit fix --force` as par
 ## Screenshot Paths
 
 Browser Use route QA passed on the local preview at `http://127.0.0.1:4321`.
+
+Phase 4B rendered QA screenshots:
+
+Phase 4B used Browser Use for route and CTA validation. Viewport screenshots were captured with the available browser screenshot tooling and moved out of the repo.
+
+- `C:\Users\Simone\AppData\Local\Temp\edith-phase-4b\playwright-screenshots\edith-phase-4b-home-desktop.png`
+- `C:\Users\Simone\AppData\Local\Temp\edith-phase-4b\playwright-screenshots\edith-phase-4b-home-mobile.png`
+- `C:\Users\Simone\AppData\Local\Temp\edith-phase-4b\playwright-screenshots\edith-phase-4b-product-desktop.png`
+- `C:\Users\Simone\AppData\Local\Temp\edith-phase-4b\playwright-screenshots\edith-phase-4b-product-mobile.png`
+- `C:\Users\Simone\AppData\Local\Temp\edith-phase-4b\playwright-screenshots\edith-phase-4b-products-desktop.png`
+- `C:\Users\Simone\AppData\Local\Temp\edith-phase-4b\playwright-screenshots\edith-phase-4b-pricing-desktop.png`
+- `C:\Users\Simone\AppData\Local\Temp\edith-phase-4b\playwright-screenshots\edith-phase-4b-download-desktop.png`
+- `C:\Users\Simone\AppData\Local\Temp\edith-phase-4b\playwright-screenshots\edith-phase-4b-support-desktop.png`
 
 Phase 4A rendered QA screenshots:
 
@@ -126,6 +147,15 @@ Browser Use also captured in-app screenshots under `C:\Users\Simone\AppData\Loca
 - Improved button, nav, card, panel, and product mockup interactions without adding JavaScript, dependencies, 3D, video, or scroll effects.
 - Tuned support contact heading wrapping after screenshot review so the public email reads cleanly on desktop and remains safe on mobile.
 
+## Phase 4B Summary
+
+- Confirmed no real Upscaler Studio screenshots, before/after examples, product mockups, or 3D/demo assets exist in `public/assets/product/upscaler-studio/` yet; only `.gitkeep` folder markers are present.
+- Expanded `docs/ASSET_INTAKE.md` into a precise asset checklist with filenames, dimensions, formats, site usage, and licensing requirements.
+- Reworked `AssetPlaceholder.astro` public copy from replacement/slot language into premium abstract product frames.
+- Added a fourth product-page media frame for the local workflow map/future demo surface.
+- Polished asset-frame CSS with richer internal structure, grid texture, comparison surfaces, release cards, and caption hierarchy.
+- Documented the current `public/og-image.svg` as safe internal artwork that should later be replaced with an approved social preview asset.
+
 ## Recommended Next Phase
 
-Create a checkpoint commit for Phase 4A after review. Phase 4B should focus on real asset integration and deeper device QA once product screenshots, before/after examples, and any Windows setup visuals are available.
+Create a checkpoint commit for Phase 4B after review. The next phase should be a Phase C release review: legal/trust copy review, Windows unsigned ZIP setup verification, Lemon Squeezy checkout verification, and final Cloudflare/GitHub deployment readiness checks.

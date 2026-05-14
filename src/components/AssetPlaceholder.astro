@@ -7,30 +7,42 @@ const { variant = "app" } = Astro.props;
 
 const labels = {
   app: {
-    title: "App screenshot slot",
-    body: "Replace with an owned Windows app screenshot showing queue, preview, controls, and export state."
+    kicker: "Workspace frame",
+    title: "Windows app workspace",
+    body: "Abstract product frame for the queue, preview, controls, and export areas.",
+    target: "screenshots/upscaler-studio-home-hero.png"
   },
   compare: {
-    title: "Before / after slot",
-    body: "Replace with owned image enhancement examples. Do not use unlicensed stock or competitor assets."
+    kicker: "Comparison frame",
+    title: "Before / after layout",
+    body: "Structured comparison surface for owned enhancement examples with clear source and result areas.",
+    target: "before-after/before-after-photo-restoration-01.png"
   },
   mockup: {
-    title: "Product mockup slot",
-    body: "Reserve this for an approved app-window mockup, not a generic setup graphic."
+    kicker: "Release frame",
+    title: "Direct ZIP release model",
+    body: "Product presentation for the direct ZIP, unsigned Windows release, and manual app management facts.",
+    target: "mockups/upscaler-studio-windows-mockup.png"
   },
   scene: {
-    title: "Future interactive slot",
-    body: "Reserved for one future 3D or interactive product section after structure and trust are stable."
+    kicker: "Workflow frame",
+    title: "Local workflow map",
+    body: "Abstract map for local processing, image output, optional video tooling, and demo media.",
+    target: "3d/upscaler-studio-interactive-scene-v1.glb"
   }
 }[variant];
 ---
 
-<article class={`asset-placeholder asset-${variant}`}>
+<article
+  class={`asset-placeholder asset-${variant}`}
+  data-asset-target={labels.target}
+  aria-label={`${labels.title} visual frame`}
+>
   <div class="asset-topbar">
     <span></span>
     <span></span>
     <span></span>
-    <strong>{labels.title}</strong>
+    <strong>{labels.kicker}</strong>
   </div>
 
   {variant === "app" && (
@@ -70,6 +82,7 @@ const labels = {
   )}
 
   <div class="asset-caption">
+    <span>{labels.kicker}</span>
     <h3>{labels.title}</h3>
     <p>{labels.body}</p>
   </div>
