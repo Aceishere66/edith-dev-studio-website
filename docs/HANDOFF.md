@@ -6,7 +6,7 @@ The previous premium redesign commits were not available in this checkout or on 
 
 Current branch:
 
-`codex/rebuild-premium-redesign-foundation`
+`codex/premium-copy-visual-correction`
 
 ## What Changed
 
@@ -26,11 +26,12 @@ Current branch:
 - Instagram: `https://www.instagram.com/edith_dev_studio`
 - X/Twitter: `https://x.com/EDITH_DevStudio`
 - Trial ZIP download: not public yet.
+- Public support email: `contact@edithdevstudio.com`
 
 ## Product Truth Locked In
 
 - €30 lifetime license is the active public purchase path.
-- Trial access is not public yet.
+- The public trial build is not available yet.
 - Windows direct ZIP release.
 - Unsigned release.
 - Image workflows work out of the box.
@@ -62,6 +63,16 @@ No dependency upgrades were performed. Do not run `npm audit fix --force` as par
 
 Browser Use route QA passed on the local preview at `http://127.0.0.1:4321`.
 
+Phase 3D Browser Use screenshots:
+
+- `C:\Users\Simone\AppData\Local\Temp\edith-phase-3d\browser-use-screenshots\home-desktop.png`
+- `C:\Users\Simone\AppData\Local\Temp\edith-phase-3d\browser-use-screenshots\home-mobile.png`
+- `C:\Users\Simone\AppData\Local\Temp\edith-phase-3d\browser-use-screenshots\product-desktop.png`
+- `C:\Users\Simone\AppData\Local\Temp\edith-phase-3d\browser-use-screenshots\product-mobile.png`
+- `C:\Users\Simone\AppData\Local\Temp\edith-phase-3d\browser-use-screenshots\pricing-desktop.png`
+- `C:\Users\Simone\AppData\Local\Temp\edith-phase-3d\browser-use-screenshots\download-desktop.png`
+- `C:\Users\Simone\AppData\Local\Temp\edith-phase-3d\browser-use-screenshots\support-desktop.png`
+
 Primary screenshot paths:
 
 - `C:\Users\Simone\AppData\Local\Temp\edith-rebuild-premium\chrome-screenshots\home-desktop-chrome.png`
@@ -82,6 +93,14 @@ Browser Use also captured in-app screenshots under `C:\Users\Simone\AppData\Loca
 - Static scans of `src` and `dist` found none of the blocked strings listed in `docs/QA_CHECKLIST.md`.
 - Browser Use route checks found no dead URLs, no `TODO_EXTERNAL` links, no public trial CTA, no fake download CTA, and no console errors on the core routes.
 
+## Phase 3D Summary
+
+- Rewrote public copy that sounded internal or defensive on `/download`, `/support`, `/pricing`, `/products`, `/products/upscaler-studio`, and the homepage support sections.
+- Replaced blunt trial language with "The public trial build is not available yet."
+- Standardized public support email to `contact@edithdevstudio.com`.
+- Reduced mobile navigation height while keeping visible tap targets and active states.
+- Added overflow protection for long support email text.
+
 ## Recommended Next Phase
 
-Create a checkpoint commit for this recovery branch after validation passes. Then proceed to a companion-page polish or real-asset integration phase, depending on whether product screenshots and before/after material are ready.
+Create a checkpoint commit for Phase 3D after review. Then proceed to real-asset integration if product screenshots and before/after material are ready; otherwise continue with a focused companion-page polish pass.

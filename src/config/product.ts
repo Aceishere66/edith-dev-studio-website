@@ -10,16 +10,16 @@ export const product = {
     price: "€30",
     term: "lifetime",
     label: "€30 lifetime",
-    publicPurchaseFlow: "The current public purchase flow is the €30 lifetime license.",
+    publicPurchaseFlow: "Current public access is handled through the €30 lifetime license.",
     refundPolicy: "No refund after purchase"
   },
   trial: {
     plannedDays: 7,
     publicAvailable: false,
     downloadAvailable: false,
-    statusLabel: "Trial access is not public yet.",
-    supportCta: "Contact support for trial availability.",
-    zipStatus: "Trial ZIP download does not exist yet."
+    statusLabel: "The public trial build is not available yet.",
+    supportCta: "Contact support for availability questions.",
+    zipStatus: "The public trial build is not available yet."
   },
   platform: "Windows",
   release: {
@@ -57,10 +57,10 @@ export const product = {
     "Install, update, and uninstall are manual.",
     "Video workflows require FFmpeg before use.",
     "Refunds are not available after purchase.",
-    "Trial access is not public yet."
+    "The public trial build is not available yet."
   ],
   support: {
-    email: "hello@edithdevstudio.com",
+    email: "contact@edithdevstudio.com",
     page: links.supportPage
   },
   routes: {

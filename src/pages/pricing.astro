@@ -8,7 +8,7 @@ import { product } from '../config/product';
 
 <BaseLayout
   title={`Pricing — ${product.name} | ${product.studioName}`}
-  description={`${product.name} pricing: ${product.offer.label}, public purchase through Lemon Squeezy, with setup notes before purchase.`}
+  description={`${product.name} pricing: ${product.offer.label}, Lemon Squeezy purchase path, no refund after purchase, and setup notes before checkout.`}
 >
   <div class="site-shell">
     <Navbar />
@@ -18,9 +18,9 @@ import { product } from '../config/product';
         <div class="container companion-split">
           <div>
             <p class="eyebrow">Pricing</p>
-            <h1>{product.offer.label} for {product.name}.</h1>
+            <h1>Straightforward lifetime pricing for {product.name}.</h1>
             <p class="lead">
-              The pricing page is a lightweight companion. The product page remains the canonical source for release notes, setup requirements, limitations, and support paths.
+              The active public offer is a {product.offer.label} license through Lemon Squeezy. Review the product page for setup details, limitations, and support paths before purchase.
             </p>
             <div class="cta-row">
               <a href={links.checkout.href} class="btn btn-primary">Buy lifetime license</a>

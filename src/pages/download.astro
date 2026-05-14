@@ -8,7 +8,7 @@ import { product } from '../config/product';
 
 <BaseLayout
   title={`Download and Setup — ${product.name} | ${product.studioName}`}
-  description={`${product.name} download and setup notes: public trial ZIP is not available yet; current release is a Windows direct ZIP with manual setup.`}
+  description={`${product.name} download and setup guidance: current access, Windows direct ZIP expectations, manual setup, and support.`}
 >
   <div class="site-shell">
     <Navbar />
@@ -18,9 +18,9 @@ import { product } from '../config/product';
         <div class="container companion-split">
           <div>
             <p class="eyebrow">Download and setup</p>
-            <h1>Download guidance without a fake ZIP link.</h1>
+            <h1>Download and setup guidance for the current release.</h1>
             <p class="lead">
-              Public trial ZIP access is not available yet. This page explains the current release expectations and routes buyers to the product page, support, and storefront.
+              Current public access is handled through the product page and storefront. The public trial build is not available yet; setup guidance is available before purchase.
             </p>
             <div class="cta-row">
               <a href={links.productPage} class="btn btn-primary">View product page</a>
@@ -30,8 +30,8 @@ import { product } from '../config/product';
           </div>
 
           <article class="release-status-panel">
-            <span class="badge">Current status</span>
-            <h2>Trial ZIP not public</h2>
+            <span class="badge">Current release access</span>
+            <h2>Trial build availability</h2>
             <p>{product.trial.zipStatus}</p>
             <p>{product.offer.publicPurchaseFlow}</p>
           </article>
@@ -62,7 +62,7 @@ import { product } from '../config/product';
           </article>
           <article class="card">
             <h3>Purchase path</h3>
-            <p>Buy through Lemon Squeezy only when you are comfortable with the current setup boundaries.</p>
+            <p>Purchase through Lemon Squeezy after reviewing the setup notes and confirming the current release fits your workflow.</p>
           </article>
         </div>
       </section>

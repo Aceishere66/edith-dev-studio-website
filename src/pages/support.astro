@@ -8,7 +8,7 @@ import { product } from '../config/product';
 
 <BaseLayout
   title={`Support — ${product.studioName}`}
-  description={`Support information for ${product.name}: ZIP setup, unsigned release, FFmpeg, purchase help, trial status, and contact details.`}
+  description={`Support for ${product.name}: setup guidance, license questions, FFmpeg, unsigned Windows release expectations, and trial build availability.`}
 >
   <div class="site-shell">
     <Navbar />
@@ -18,9 +18,9 @@ import { product } from '../config/product';
         <div class="container companion-split">
           <div>
             <p class="eyebrow">Support</p>
-            <h1>Help for purchase, setup, and release questions.</h1>
+            <h1>Support for setup, license, and release questions.</h1>
             <p class="lead">
-              Support should make the current product state easy to understand: direct ZIP release, unsigned Windows warning, manual app management, FFmpeg for video, and no public trial ZIP yet.
+              Get help with the Windows direct ZIP release, unsigned release expectations, manual app management, FFmpeg for video workflows, and trial build availability.
             </p>
             <div class="cta-row">
               <a href={`mailto:${product.support.email}`} class="btn btn-primary">Email support</a>
@@ -31,7 +31,7 @@ import { product } from '../config/product';
           <article class="support-contact-card" id="contact">
             <span class="badge">Contact</span>
             <h2>{product.support.email}</h2>
-            <p>Use this address for license access, setup questions, ZIP guidance, FFmpeg questions, and purchase support.</p>
+            <p>Use this address for license access, setup questions, ZIP guidance, FFmpeg help, and purchase support.</p>
           </article>
         </div>
       </section>
@@ -40,7 +40,7 @@ import { product } from '../config/product';
         <div class="container grid-3">
           <article class="card" id="download">
             <h3>Download status</h3>
-            <p>{product.trial.zipStatus} Do not use unofficial links or fake download mirrors.</p>
+            <p>{product.trial.zipStatus} Use the product page, storefront, or support for current access guidance.</p>
           </article>
           <article class="card">
             <h3>Direct ZIP</h3>
@@ -71,7 +71,7 @@ import { product } from '../config/product';
             <p class="eyebrow">Still deciding?</p>
             <h2>Review the product page before checkout.</h2>
             <p class="lead">
-              The product page is the canonical source for pricing, setup notes, release limitations, and the current trial ZIP status.
+              The product page is the canonical source for pricing, setup notes, release limitations, and trial build availability.
             </p>
           </div>
           <div class="cta-stack">

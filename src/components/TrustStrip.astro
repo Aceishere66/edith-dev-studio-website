@@ -3,7 +3,7 @@ import { product } from "../config/product";
 
 const trustFacts = [
   { title: "Studio", body: `${product.studioName} is the publisher brand for focused creative software.` },
-  { title: "Flagship", body: `${product.name} carries the current product story.` },
+  { title: "Flagship", body: `${product.name} is the current flagship product.` },
   { title: "Offer", body: `${product.offer.label}; public storefront available.` },
   { title: "Trial", body: product.trial.zipStatus }
 ];
@@ -14,7 +14,7 @@ const trustFacts = [
     {trustFacts.map((fact) => (
       <article class="home-signal">
         <span>{fact.title}</span>
-        <strong>{fact.title === "Flagship" ? product.name : fact.title === "Offer" ? product.offer.label : fact.title === "Trial" ? "Not public" : product.studioName}</strong>
+        <strong>{fact.title === "Flagship" ? product.name : fact.title === "Offer" ? product.offer.label : fact.title === "Trial" ? "Availability" : product.studioName}</strong>
         <p>{fact.body}</p>
       </article>
     ))}
