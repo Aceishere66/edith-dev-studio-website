@@ -8,6 +8,10 @@ Current branch:
 
 `codex/premium-copy-visual-correction`
 
+Phase 4A branch:
+
+`codex/premium-motion-interaction-pass`
+
 ## What Changed
 
 - Added `.vs/` to `.gitignore` so local Visual Studio files stay out of the repo.
@@ -63,6 +67,19 @@ No dependency upgrades were performed. Do not run `npm audit fix --force` as par
 
 Browser Use route QA passed on the local preview at `http://127.0.0.1:4321`.
 
+Phase 4A rendered QA screenshots:
+
+Phase 4A used the exposed browser tooling as the available rendered-QA path. The local preview was checked at desktop and mobile widths with screenshot capture, CTA navigation, and console-error review.
+
+- `C:\Users\Simone\AppData\Local\Temp\edith-phase-4a\playwright-screenshots\edith-phase-4a-home-desktop.png`
+- `C:\Users\Simone\AppData\Local\Temp\edith-phase-4a\playwright-screenshots\edith-phase-4a-home-mobile.png`
+- `C:\Users\Simone\AppData\Local\Temp\edith-phase-4a\playwright-screenshots\edith-phase-4a-product-desktop.png`
+- `C:\Users\Simone\AppData\Local\Temp\edith-phase-4a\playwright-screenshots\edith-phase-4a-product-mobile.png`
+- `C:\Users\Simone\AppData\Local\Temp\edith-phase-4a\playwright-screenshots\edith-phase-4a-products-desktop.png`
+- `C:\Users\Simone\AppData\Local\Temp\edith-phase-4a\playwright-screenshots\edith-phase-4a-pricing-desktop.png`
+- `C:\Users\Simone\AppData\Local\Temp\edith-phase-4a\playwright-screenshots\edith-phase-4a-download-desktop.png`
+- `C:\Users\Simone\AppData\Local\Temp\edith-phase-4a\playwright-screenshots\edith-phase-4a-support-desktop.png`
+
 Phase 3D Browser Use screenshots:
 
 - `C:\Users\Simone\AppData\Local\Temp\edith-phase-3d\browser-use-screenshots\home-desktop.png`
@@ -101,6 +118,14 @@ Browser Use also captured in-app screenshots under `C:\Users\Simone\AppData\Loca
 - Reduced mobile navigation height while keeping visible tap targets and active states.
 - Added overflow protection for long support email text.
 
+## Phase 4A Summary
+
+- Added CSS-only motion tokens, entrance keyframes, hover states, focus states, and product-frame sheen effects.
+- Applied subtle entrance motion to homepage, product, and companion-page hero/content groups only when `prefers-reduced-motion: no-preference` is active.
+- Added reduced-motion fallbacks that remove transforms and hide decorative sheen layers.
+- Improved button, nav, card, panel, and product mockup interactions without adding JavaScript, dependencies, 3D, video, or scroll effects.
+- Tuned support contact heading wrapping after screenshot review so the public email reads cleanly on desktop and remains safe on mobile.
+
 ## Recommended Next Phase
 
-Create a checkpoint commit for Phase 3D after review. Then proceed to real-asset integration if product screenshots and before/after material are ready; otherwise continue with a focused companion-page polish pass.
+Create a checkpoint commit for Phase 4A after review. Phase 4B should focus on real asset integration and deeper device QA once product screenshots, before/after examples, and any Windows setup visuals are available.
