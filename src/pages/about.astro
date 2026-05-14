@@ -2,11 +2,12 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Navbar from '../components/Navbar.astro';
 import Footer from '../components/Footer.astro';
+import { product } from '../config/product';
 ---
 
 <BaseLayout
-  title="About — EDITH Dev Studio"
-  description="Learn about EDITH Dev Studio, the publisher brand behind Upscaler Studio and future premium Windows-first desktop products."
+  title={`About — ${product.studioName}`}
+  description={`Learn about ${product.studioName}, the creative software studio behind ${product.name}.`}
 >
   <div class="site-shell">
     <Navbar />
@@ -18,7 +19,7 @@ import Footer from '../components/Footer.astro';
             <p class="eyebrow">About</p>
             <h1>About EDITH Dev Studio</h1>
             <p class="lead">
-              EDITH Dev Studio is the publisher brand behind Upscaler Studio and future premium Windows-first desktop products.
+              {product.studioName} is the creative software studio and publisher behind {product.name}, with a focus on practical local-first Windows tools.
             </p>
           </div>
 
@@ -26,14 +27,14 @@ import Footer from '../components/Footer.astro';
             <article class="card">
               <h3>What the studio is building</h3>
               <p style="margin-top: .75rem;">
-                The studio direction is focused on serious desktop software with stronger product presentation, cleaner commercial readiness, and a better user experience than disposable utility-grade tools.
+                The studio direction is focused on serious desktop software with clear release notes, honest setup expectations, and polished product experiences.
               </p>
             </article>
 
             <article class="card">
               <h3>Current focus</h3>
               <p style="margin-top: .75rem;">
-                Upscaler Studio is the first featured product and is positioned around local AI upscaling, Windows-first workflows, and a premium product surface for image and video users.
+                {product.name} is the flagship product: {product.headline} Image workflows work out of the box, while video workflows require FFmpeg.
               </p>
             </article>
 

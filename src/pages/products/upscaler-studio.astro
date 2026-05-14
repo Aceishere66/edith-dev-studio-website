@@ -2,218 +2,380 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import Navbar from '../../components/Navbar.astro';
 import Footer from '../../components/Footer.astro';
+import AssetPlaceholder from '../../components/AssetPlaceholder.astro';
+import { links } from '../../config/links';
+import { product } from '../../config/product';
+
+const headlineTitle = product.headline.replace(/\.$/, "");
+
+const heroFacts = [
+  { label: "License", value: product.offer.label, detail: "Active public purchase path" },
+  { label: "Platform", value: product.platform, detail: product.release.distribution },
+  { label: "Images", value: "Ready", detail: "Works out of the box" },
+  { label: "Video", value: "FFmpeg", detail: "External setup required" }
+];
+
+const audienceCards = [
+  {
+    title: "Creators and photographers",
+    body: "Upscale source images, restore old-photo detail, and prepare cleaner visual assets from a focused Windows desktop workflow."
+  },
+  {
+    title: "Local-first AI users",
+    body: "Keep the core enhancement workflow on your own machine with a direct product surface instead of a generic cloud dashboard."
+  },
+  {
+    title: "Video editors with FFmpeg",
+    body: "Use video workflows only after installing external FFmpeg. The current release requires that extra setup before video processing."
+  }
+];
+
+const workflowPanels = [
+  {
+    label: "Image workflow",
+    title: "Image enhancement works out of the box.",
+    body: "The current release is clearest for image upscaling, old-photo restoration tests, and still-image enhancement on Windows.",
+    items: ["Local Windows workflow", "Focused input / preview / export surface", "Best current fit for buyers evaluating output quality"]
+  },
+  {
+    label: "Video workflow",
+    title: "Video requires external FFmpeg.",
+    body: "Video processing depends on FFmpeg being installed and available. Read the setup notes before buying if video is your main use case.",
+    items: ["External FFmpeg required", "Manual setup responsibility", "Not treated as an immediate video flow"]
+  }
+];
+
+const purchaseNotes = [
+  `${product.offer.label} through the EDITH Dev Studio storefront.`,
+  product.offer.refundPolicy,
+  product.trial.statusLabel,
+  "Review setup, unsigned release, and FFmpeg requirements before purchase."
+];
+
+const setupFacts = [
+  product.release.distribution,
+  product.release.path,
+  product.release.unsignedNote,
+  `${product.release.install}, ${product.release.update}, and ${product.release.uninstall}.`
+];
+
+const limitationFacts = [
+  "Trial ZIP download does not exist yet.",
+  "Video workflows require FFmpeg before use.",
+  "The release is unsigned, so Windows may show a security warning.",
+  "Install, update, and uninstall are manual.",
+  "Refunds are not available after purchase."
+];
+
+const faqItems = [
+  {
+    question: "What is Upscaler Studio?",
+    answer:
+      "A local-first AI upscaling studio for Windows, published by EDITH Dev Studio, focused on image enhancement and direct desktop control."
+  },
+  {
+    question: "What works without extra setup?",
+    answer: product.workflows.image
+  },
+  {
+    question: "What needs FFmpeg?",
+    answer:
+      "Video workflows require external FFmpeg. Install and configure FFmpeg before using video processing."
+  },
+  {
+    question: "Is public trial access available?",
+    answer: `${product.trial.statusLabel} ${product.trial.supportCta}`
+  },
+  {
+    question: "Why no refund after purchase?",
+    answer:
+      "The current policy is no refund after purchase. Review the setup notes and contact support with compatibility questions before buying."
+  },
+  {
+    question: "Where do I get help?",
+    answer:
+      "Use support for storefront access, ZIP guidance, unsigned Windows warnings, manual setup, and FFmpeg questions."
+  }
+];
 ---
 
 <BaseLayout
-  title="Upscaler Studio — EDITH Dev Studio"
-  description="Upscaler Studio is a local-first Windows desktop AI upscaling product direction from EDITH Dev Studio, designed around image and video workflows."
+  title={`${product.name} — ${headlineTitle}`}
+  description={`${product.name} is a local-first AI upscaling studio for Windows with a ${product.offer.label} license, direct ZIP release, and honest setup notes for images, video, FFmpeg, and support.`}
 >
   <div class="site-shell">
     <Navbar />
 
-    <main>
-      <section class="hero">
-        <div class="orb one"></div>
-        <div class="orb two"></div>
+    <main class="product-page">
+      <section class="product-hero">
+        <div class="product-hero-field" aria-hidden="true"></div>
 
-        <div class="container hero-grid">
-          <div>
-            <p class="eyebrow">Upscaler Studio · by EDITH Dev Studio</p>
-            <h1>Local AI upscaling with a product-grade desktop direction.</h1>
+        <div class="container product-hero-grid">
+          <div class="product-hero-copy">
+            <p class="eyebrow">{product.name} · flagship product</p>
+            <h1>{product.headline}</h1>
             <p class="hero-copy">
-              Upscaler Studio is being positioned as a premium Windows-first tool for image and video upscaling, built around local processing, batch workflows, review, and cleaner control.
+              {product.primaryMessage} Built for creators who want image enhancement, local control, and release facts visible before checkout.
             </p>
 
             <div class="cta-row">
-              <a href="/pricing" class="btn btn-primary">View launch model</a>
-              <a href="/support" class="btn btn-secondary">Contact support</a>
+              <a href={links.checkout.href} class="btn btn-primary">Buy lifetime license</a>
+              <a href={links.setupNotes} class="btn btn-secondary">Read setup notes</a>
             </div>
 
-            <div class="metrics">
-              <div class="metric">
-                <h3>Local-first</h3>
-                <p class="muted">Desktop processing direction</p>
-              </div>
-              <div class="metric">
-                <h3>Image + Video</h3>
-                <p class="muted">One product identity</p>
-              </div>
-              <div class="metric">
-                <h3>Batch-ready</h3>
-                <p class="muted">Workflow-oriented surface</p>
-              </div>
+            <p class="support-note">
+              Active public purchase path: {product.offer.label} through Lemon Squeezy. {product.trial.statusLabel}
+            </p>
+
+            <div class="product-hero-facts" aria-label={`${product.name} release facts`}>
+              {heroFacts.map((fact) => (
+                <article>
+                  <span>{fact.label}</span>
+                  <strong>{fact.value}</strong>
+                  <p>{fact.detail}</p>
+                </article>
+              ))}
             </div>
           </div>
 
-          <div class="hero-card float-panel">
-            <div class="window-dots">
-              <span></span><span></span><span></span>
-            </div>
-
-            <div class="preview-grid">
-              <div class="preview-box input">Input preview</div>
-
-              <div class="process-card">
-                <strong>Product direction</strong>
-                <p class="muted" style="margin-top: .35rem;">
-                  Model choice, queueing, review, and export flow presented as one coherent desktop experience.
-                </p>
-                <div class="progress"><i></i></div>
+          <div class="product-hero-visual" aria-label={`${product.name} abstract product workspace`}>
+            <div class="product-workspace-frame">
+              <div class="product-frame-top">
+                <span></span>
+                <span></span>
+                <span></span>
+                <strong>{product.name}</strong>
               </div>
 
-              <div class="preview-box output">Enhanced output</div>
+              <div class="product-workspace-body">
+                <aside class="product-side-rail" aria-label="Workflow steps">
+                  <span class="is-active">Input</span>
+                  <span>Preview</span>
+                  <span>Export</span>
+                </aside>
+
+                <div class="product-preview-pane">
+                  <div class="product-preview-base">
+                    <small>Original</small>
+                  </div>
+                  <div class="product-preview-enhanced">
+                    <small>Enhanced</small>
+                  </div>
+                </div>
+              </div>
+
+              <div class="product-control-deck">
+                <div class="product-control-row">
+                  <span>Scale</span>
+                  <i></i>
+                  <strong>4x</strong>
+                </div>
+                <div class="product-control-row">
+                  <span>Model</span>
+                  <i></i>
+                  <strong>Local</strong>
+                </div>
+              </div>
+
+              <div class="product-status-grid">
+                <div>
+                  <span class="product-status-dot"></span>
+                  <strong>{product.workflows.image}</strong>
+                </div>
+                <div>
+                  <span class="product-status-dot warn"></span>
+                  <strong>{product.workflows.video}</strong>
+                </div>
+              </div>
             </div>
           </div>
         </div>
       </section>
 
-      <section class="section">
-        <div class="container">
-          <div class="section-head">
-            <p class="eyebrow">Who it is for</p>
-            <h2>Built for people who care about output and control.</h2>
+      <section class="product-signal-strip" aria-label="Upscaler Studio key facts">
+        <div class="container product-signal-grid">
+          <article class="product-signal">
+            <span>Current offer</span>
+            <strong>{product.offer.label}</strong>
+            <p>{product.offer.publicPurchaseFlow}</p>
+          </article>
+          <article class="product-signal">
+            <span>Release</span>
+            <strong>{product.release.path}</strong>
+            <p>{product.release.distribution}; unsigned and manual.</p>
+          </article>
+          <article class="product-signal">
+            <span>Best fit</span>
+            <strong>Image enhancement</strong>
+            <p>{product.workflows.image}</p>
+          </article>
+          <article class="product-signal">
+            <span>Trial status</span>
+            <strong>Not public</strong>
+            <p>{product.trial.zipStatus}</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section product-story-section" id="overview">
+        <div class="container product-story-grid">
+          <div class="product-section-copy">
+            <p class="eyebrow">Product story</p>
+            <h2>Image upscaling for creators who prefer local Windows control.</h2>
             <p class="lead">
-              The strongest product positioning is not “AI for everyone”, but a more serious tool direction for users who value workflow clarity, local ownership, and better packaging.
+              {product.name} is not positioned as a broad cloud suite. It is a focused desktop product for visual enhancement workflows where output quality, setup clarity, and ownership matter.
             </p>
           </div>
 
-          <div class="grid-3">
-            <article class="card">
-              <h3>Creators</h3>
-              <p style="margin-top: .7rem;">Useful for users who want higher-quality image or video output without depending entirely on browser-based tools.</p>
-            </article>
-
-            <article class="card">
-              <h3>Power users</h3>
-              <p style="margin-top: .7rem;">Better suited to people who care about presets, batch operations, visible process flow, and desktop control.</p>
-            </article>
-
-            <article class="card">
-              <h3>Future customers</h3>
-              <p style="margin-top: .7rem;">The product page should already feel commercial-grade, even before final screenshots, legal text, and checkout go live.</p>
-            </article>
+          <div class="product-story-panel">
+            <div>
+              <span>What it does</span>
+              <p>
+                Enhances images locally on Windows through a focused workspace for creators, photographers, old-photo restoration, and AI power users.
+              </p>
+            </div>
+            <div>
+              <span>Why local-first matters</span>
+              <p>
+                The product direction favors direct desktop control, visible setup requirements, and fewer hidden assumptions before purchase.
+              </p>
+            </div>
           </div>
+        </div>
+
+        <div class="container product-audience-grid">
+          {audienceCards.map((card) => (
+            <article class="product-card">
+              <h3>{card.title}</h3>
+              <p>{card.body}</p>
+            </article>
+          ))}
         </div>
       </section>
 
-      <section class="section alt">
+      <section class="section alt product-workflow-section">
         <div class="container">
           <div class="section-head">
-            <p class="eyebrow">Why local-first matters</p>
-            <h2>A stronger value proposition than “just another AI tool”.</h2>
+            <p class="eyebrow">Workflow clarity</p>
+            <h2>Images first. Video only with FFmpeg.</h2>
             <p class="lead">
-              The differentiator is not only upscale capability. It is the combination of local control, desktop seriousness, and a workflow that feels intentional.
+              The page separates the ready image workflow from the video path that requires external FFmpeg, so buyers can decide with the current release facts in front of them.
             </p>
           </div>
 
-          <div class="grid-3">
-            <article class="card">
-              <h3>More control</h3>
-              <p style="margin-top: .7rem;">A local-first product direction gives users a clearer sense of ownership over files, workflow, and machine-level execution.</p>
-            </article>
-
-            <article class="card">
-              <h3>Better privacy posture</h3>
-              <p style="margin-top: .7rem;">Not every user wants a cloud-native path for media processing. That tension can become part of the product’s identity.</p>
-            </article>
-
-            <article class="card">
-              <h3>Desktop credibility</h3>
-              <p style="margin-top: .7rem;">A polished Windows-first presentation helps the product feel distinct from a simple wrapper around command-line tooling.</p>
-            </article>
+          <div class="product-workflow-grid">
+            {workflowPanels.map((panel) => (
+              <article class="workflow-panel">
+                <span>{panel.label}</span>
+                <h3>{panel.title}</h3>
+                <p>{panel.body}</p>
+                <ul>
+                  {panel.items.map((item) => <li>{item}</li>)}
+                </ul>
+              </article>
+            ))}
           </div>
         </div>
       </section>
 
-      <section class="section">
-        <div class="container">
-          <div class="section-head">
-            <p class="eyebrow">Workflow highlights</p>
-            <h2>What the product page should communicate clearly.</h2>
-          </div>
-
-          <div class="grid-2">
-            <article class="card">
-              <h3>Image and video scope</h3>
-              <p style="margin-top: .7rem;">One product identity built around both still-image enhancement and video-oriented processing direction.</p>
-            </article>
-
-            <article class="card">
-              <h3>Queue and review</h3>
-              <p style="margin-top: .7rem;">Batch-ready flow, result comparison, and history visibility matter more than a single “upscale now” button.</p>
-            </article>
-
-            <article class="card">
-              <h3>Cleaner product surface</h3>
-              <p style="margin-top: .7rem;">A premium site should suggest stronger packaging, better UX, and clearer product logic from the first screen.</p>
-            </article>
-
-            <article class="card">
-              <h3>Release-aware presentation</h3>
-              <p style="margin-top: .7rem;">The page can feel serious without claiming that download, legal, packaging, and commercial readiness are already final.</p>
-            </article>
-          </div>
-        </div>
-      </section>
-
-      <section class="section alt">
-        <div class="container">
-          <div class="section-head">
-            <p class="eyebrow">Launch model</p>
-            <h2>Simple first. Expand later.</h2>
+      <section class="section product-pricing-section" id="pricing">
+        <div class="container product-pricing-layout">
+          <article class="product-license-panel">
+            <p class="eyebrow">License</p>
+            <h2>{product.offer.label}</h2>
             <p class="lead">
-              The current recommended go-to-market structure is a free trial plus a single Studio License, presented as the likely launch model rather than as fully live checkout.
+              The active public purchase flow is the lifetime license through the EDITH Dev Studio storefront.
+            </p>
+
+            <div class="product-price-row">
+              <strong>{product.offer.price}</strong>
+              <span>{product.offer.term} license</span>
+            </div>
+
+            <ul class="product-note-list">
+              {purchaseNotes.map((note) => <li>{note}</li>)}
+            </ul>
+
+            <div class="cta-row">
+              <a href={links.checkout.href} class="btn btn-primary">Buy lifetime license</a>
+              <a href={links.supportContact} class="btn btn-secondary">Contact support</a>
+            </div>
+          </article>
+
+          <aside class="product-limit-panel">
+            <span class="product-panel-label">Before purchase</span>
+            <h3>Know the setup boundaries.</h3>
+            <ul>
+              {limitationFacts.map((fact) => <li>{fact}</li>)}
+            </ul>
+          </aside>
+        </div>
+      </section>
+
+      <section class="section alt product-assets-section">
+        <div class="container">
+          <div class="section-head">
+            <p class="eyebrow">Product proof slots</p>
+            <h2>Ready for real screenshots and before/after examples.</h2>
+            <p class="lead">
+              These internal placeholders reserve the page structure without borrowing online assets. Replace them with owned product screenshots, owned enhancement examples, and approved commercial-use media.
             </p>
           </div>
 
-          <div class="pricing-grid">
-            <article class="price-card">
-              <span class="badge">Planned entry point</span>
-              <h3 style="margin-top: 1rem;">Trial</h3>
-              <div class="price">Free</div>
-              <ul class="price-list">
-                <li>Evaluation-first path</li>
-                <li>Lower-friction adoption</li>
-                <li>Stronger trust at first touch</li>
+          <div class="product-proof-grid">
+            <AssetPlaceholder variant="app" />
+            <AssetPlaceholder variant="compare" />
+            <AssetPlaceholder variant="mockup" />
+          </div>
+        </div>
+      </section>
+
+      <section class="section product-setup-section" id="setup-notes">
+        <div class="container product-setup-layout">
+          <div class="product-section-copy">
+            <p class="eyebrow">Setup notes</p>
+            <h2>Direct ZIP release with manual app management.</h2>
+            <p class="lead">
+              The current release is practical and direct, but setup is not automated. Review these notes before checkout.
+            </p>
+
+            <div class="cta-row">
+              <a href={links.supportSetup} class="btn btn-secondary">Read support setup</a>
+              <a href={links.supportFfmpeg} class="btn btn-secondary">FFmpeg help</a>
+            </div>
+          </div>
+
+          <div class="product-setup-stack">
+            <article>
+              <span>Release package</span>
+              <ul>
+                {setupFacts.map((fact) => <li>{fact}</li>)}
               </ul>
             </article>
-
-            <article class="price-card featured">
-              <span class="badge">Planned launch option</span>
-              <h3 style="margin-top: 1rem;">Studio License</h3>
-              <div class="price">€49</div>
-              <ul class="price-list">
-                <li>Simple premium structure</li>
-                <li>Cleaner product messaging</li>
-                <li>Good first public pricing test</li>
+            <article>
+              <span>Requirements</span>
+              <ul>
+                {product.requirements.map((requirement) => <li>{requirement}</li>)}
               </ul>
             </article>
           </div>
         </div>
       </section>
 
-      <section class="section">
+      <section class="section alt product-faq-section">
         <div class="container">
           <div class="section-head">
-            <p class="eyebrow">FAQ direction</p>
-            <h2>Answer the questions a serious visitor will already have.</h2>
+            <p class="eyebrow">FAQ</p>
+            <h2>Clear answers for the current release.</h2>
           </div>
 
-          <div class="faq-grid grid-3">
-            <article class="faq-item">
-              <h3>Is Upscaler Studio already fully released?</h3>
-              <p class="muted" style="margin-top: .6rem;">The website can present the intended product direction now, while final release depends on packaging, quality, and compliance gates.</p>
-            </article>
-
-            <article class="faq-item">
-              <h3>Why emphasize local-first?</h3>
-              <p class="muted" style="margin-top: .6rem;">Because local control, privacy posture, and desktop ownership are part of the product’s differentiation strategy.</p>
-            </article>
-
-            <article class="faq-item">
-              <h3>Why keep EDITH separate from the product name?</h3>
-              <p class="muted" style="margin-top: .6rem;">Because EDITH Dev Studio should remain the umbrella publisher brand for future products beyond Upscaler Studio.</p>
-            </article>
+          <div class="product-faq-grid">
+            {faqItems.map((item) => (
+              <article class="faq-item">
+                <h3>{item.question}</h3>
+                <p>{item.answer}</p>
+              </article>
+            ))}
           </div>
         </div>
       </section>

@@ -1,25 +1,22 @@
-<section class="section" style="padding-top: 0;">
-  <div class="container">
-    <div class="trust-grid">
-      <div class="trust-item">
-        <h3>Local-first direction</h3>
-        <p class="muted" style="margin-top: .45rem;">Built around desktop processing instead of a cloud-dependent workflow.</p>
-      </div>
+---
+import { product } from "../config/product";
 
-      <div class="trust-item">
-        <h3>Windows-focused</h3>
-        <p class="muted" style="margin-top: .45rem;">Positioned as a serious Windows desktop product, not a disposable utility.</p>
-      </div>
+const trustFacts = [
+  { title: "Studio", body: `${product.studioName} is the publisher brand for focused creative software.` },
+  { title: "Flagship", body: `${product.name} carries the current product story.` },
+  { title: "Offer", body: `${product.offer.label}; public storefront available.` },
+  { title: "Trial", body: product.trial.zipStatus }
+];
+---
 
-      <div class="trust-item">
-        <h3>Workflow-led</h3>
-        <p class="muted" style="margin-top: .45rem;">Designed around queueing, review, compare, and output control direction.</p>
-      </div>
-
-      <div class="trust-item">
-        <h3>Studio brand ready</h3>
-        <p class="muted" style="margin-top: .45rem;">EDITH Dev Studio stays extensible for future products beyond Upscaler Studio.</p>
-      </div>
-    </div>
+<section class="home-signal-strip" aria-label="Studio and product facts">
+  <div class="container home-signal-grid">
+    {trustFacts.map((fact) => (
+      <article class="home-signal">
+        <span>{fact.title}</span>
+        <strong>{fact.title === "Flagship" ? product.name : fact.title === "Offer" ? product.offer.label : fact.title === "Trial" ? "Not public" : product.studioName}</strong>
+        <p>{fact.body}</p>
+      </article>
+    ))}
   </div>
 </section>

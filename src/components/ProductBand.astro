@@ -1,18 +1,24 @@
+---
+import { links } from "../config/links";
+import { product } from "../config/product";
+---
+
 <section class="section">
   <div class="container product-band">
     <div class="grid-2">
       <div>
         <p class="eyebrow">Publisher</p>
-        <h2>EDITH Dev Studio</h2>
-        <p class="copy" style="margin-top:1rem;">
-          The site is designed so Upscaler Studio is the flagship product today, while the structure remains ready for future tools.
+        <h2>{product.studioName}</h2>
+        <p class="lead">
+          The site is structured so {product.name} is the flagship product today, while the studio brand can support future creative tools later.
         </p>
       </div>
       <div>
         <ul class="checks">
-          <li>Future products can live under <span class="inline-code">/products</span></li>
-          <li>Current homepage can act as studio + flagship product page</li>
-          <li>Legal and support pages already scale across future releases</li>
+          <li>Current canonical product page: <span class="inline-code">{links.productPage}</span></li>
+          <li>Current offer: {product.offer.label}</li>
+          <li>{product.trial.statusLabel}</li>
+          <li>{product.workflows.video}</li>
         </ul>
       </div>
     </div>

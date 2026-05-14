@@ -1,42 +1,47 @@
+---
+import { links } from "../config/links";
+import { product } from "../config/product";
+---
+
 <section class="section">
   <div class="container">
     <div class="section-head">
-      <p class="eyebrow">Launch model</p>
-      <h2>Start simple. Keep the path clear.</h2>
+      <p class="eyebrow">Offer</p>
+      <h2>{product.offer.label}. Clear setup notes before checkout.</h2>
       <p class="lead">
-        The current public direction is a free trial plus a single Studio License. Final checkout and download activation should follow the product release gates, not outrun them.
+        The public purchase path is the lifetime license. Trial access is not public yet, so buyers should review release notes and setup requirements before purchase.
       </p>
     </div>
 
     <div class="pricing-grid">
-      <article class="price-card">
-        <span class="badge">Planned entry point</span>
-        <h3 style="margin-top: 1rem;">Trial</h3>
-        <div class="price">Free</div>
-        <p class="muted">Best for evaluating output quality, workflow fit, and hardware compatibility before any paid decision.</p>
+      <article class="price-card featured">
+        <span class="badge">Active public offer</span>
+        <h3>{product.name}</h3>
+        <div class="price">{product.offer.price}</div>
+        <p class="muted">{product.offer.term} license. {product.offer.refundPolicy}.</p>
 
         <ul class="price-list">
-          <li>Evaluation-oriented access</li>
-          <li>Lower-friction first touchpoint</li>
-          <li>Useful for quality and compatibility checks</li>
+          <li>{product.workflows.image}</li>
+          <li>{product.release.distribution}</li>
+          <li>{product.release.path}</li>
         </ul>
 
-        <a href="/products/upscaler-studio" class="btn btn-secondary" style="margin-top: 1.25rem;">View product details</a>
+        <a href={links.checkout.href} class="btn btn-primary">Buy lifetime license</a>
       </article>
 
-      <article class="price-card featured">
-        <span class="badge">Planned launch option</span>
-        <h3 style="margin-top: 1rem;">Studio License</h3>
-        <div class="price">€49</div>
-        <p class="muted">Recommended first public price test for a premium indie desktop tool, pending final release readiness.</p>
+      <article class="price-card">
+        <span class="badge">Before purchase</span>
+        <h3>Know the setup path</h3>
+        <div class="price">ZIP</div>
+        <p class="muted">{product.trial.statusLabel} {product.workflows.video}</p>
 
         <ul class="price-list">
-          <li>Simple single-license structure</li>
-          <li>Cleaner commercial positioning</li>
-          <li>Easy to explain on first launch</li>
+          <li>{product.release.unsignedNote}</li>
+          <li>{product.release.install}, {product.release.update}, and {product.release.uninstall}</li>
+          <li>{product.trial.zipStatus}</li>
         </ul>
 
-        <a href="/support" class="btn btn-primary" style="margin-top: 1.25rem;">Contact for release updates</a>
+        <a href={links.setupNotes} class="btn btn-secondary">Read setup notes</a>
       </article>
     </div>
   </div>

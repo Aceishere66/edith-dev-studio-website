@@ -2,48 +2,81 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Navbar from '../components/Navbar.astro';
 import Footer from '../components/Footer.astro';
+import { links } from '../config/links';
+import { product } from '../config/product';
 ---
 
 <BaseLayout
-  title="Support — EDITH Dev Studio"
-  description="Get support information for Upscaler Studio and contact EDITH Dev Studio for product questions and release-related updates."
+  title={`Support — ${product.studioName}`}
+  description={`Support information for ${product.name}: ZIP setup, unsigned release, FFmpeg, purchase help, trial status, and contact details.`}
 >
   <div class="site-shell">
     <Navbar />
 
-    <main>
+    <main class="companion-page">
       <section class="section page-top-safe">
-        <div class="container">
-          <div class="section-head">
+        <div class="container companion-split">
+          <div>
             <p class="eyebrow">Support</p>
-            <h1>Support</h1>
+            <h1>Help for purchase, setup, and release questions.</h1>
             <p class="lead">
-              This page is the support entry point for Upscaler Studio and future products from EDITH Dev Studio.
+              Support should make the current product state easy to understand: direct ZIP release, unsigned Windows warning, manual app management, FFmpeg for video, and no public trial ZIP yet.
             </p>
+            <div class="cta-row">
+              <a href={`mailto:${product.support.email}`} class="btn btn-primary">Email support</a>
+              <a href={links.productPage} class="btn btn-secondary">View product</a>
+            </div>
           </div>
 
-          <div class="grid-3">
-            <article class="card">
-              <h3>General contact</h3>
-              <p style="margin-top: .75rem;">
-                For general product questions and release-related updates, contact
-                <a href="mailto:hello@edithdevstudio.com">hello@edithdevstudio.com</a>.
-              </p>
-            </article>
+          <article class="support-contact-card" id="contact">
+            <span class="badge">Contact</span>
+            <h2>{product.support.email}</h2>
+            <p>Use this address for license access, setup questions, ZIP guidance, FFmpeg questions, and purchase support.</p>
+          </article>
+        </div>
+      </section>
 
-            <article class="card">
-              <h3>Before reaching out</h3>
-              <p style="margin-top: .75rem;">
-                When support resources expand, this section should help users check system requirements, installation steps, release notes, and common troubleshooting items first.
-              </p>
-            </article>
+      <section class="section alt" id="setup">
+        <div class="container grid-3">
+          <article class="card" id="download">
+            <h3>Download status</h3>
+            <p>{product.trial.zipStatus} Do not use unofficial links or fake download mirrors.</p>
+          </article>
+          <article class="card">
+            <h3>Direct ZIP</h3>
+            <p>{product.release.distribution}. Setup, update, and uninstall are manual.</p>
+          </article>
+          <article class="card">
+            <h3>Unsigned release</h3>
+            <p>{product.release.unsignedNote}</p>
+          </article>
+          <article class="card" id="ffmpeg">
+            <h3>FFmpeg for video</h3>
+            <p>{product.workflows.video} Image workflows do not need that extra media tooling.</p>
+          </article>
+          <article class="card" id="license">
+            <h3>Purchase help</h3>
+            <p>The public purchase path is the {product.offer.label} license through Lemon Squeezy. {product.offer.refundPolicy}.</p>
+          </article>
+          <article class="card">
+            <h3>Before buying</h3>
+            <p>Read setup notes, confirm your Windows workflow fit, and contact support if video processing is your main use case.</p>
+          </article>
+        </div>
+      </section>
 
-            <article class="card">
-              <h3>What will be added</h3>
-              <p style="margin-top: .75rem;">
-                Future support material can include FAQs, activation help, known issues, installation guidance, and links to changelog or release notes.
-              </p>
-            </article>
+      <section class="section">
+        <div class="container cta-panel">
+          <div>
+            <p class="eyebrow">Still deciding?</p>
+            <h2>Review the product page before checkout.</h2>
+            <p class="lead">
+              The product page is the canonical source for pricing, setup notes, release limitations, and the current trial ZIP status.
+            </p>
+          </div>
+          <div class="cta-stack">
+            <a href={links.productPage} class="btn btn-primary">View product page</a>
+            <a href={links.checkout.href} class="btn btn-secondary">Open storefront</a>
           </div>
         </div>
       </section>

@@ -7,89 +7,130 @@ import FeatureGrid from '../components/FeatureGrid.astro';
 import PricingPreview from '../components/PricingPreview.astro';
 import DownloadPanel from '../components/DownloadPanel.astro';
 import Footer from '../components/Footer.astro';
+import AssetPlaceholder from '../components/AssetPlaceholder.astro';
+import { links } from '../config/links';
+import { product } from '../config/product';
+
+const productFacts = [
+  product.headline,
+  product.workflows.image,
+  product.workflows.video,
+  `${product.release.distribution}; ${product.release.install.toLowerCase()}, ${product.release.update.toLowerCase()}, and ${product.release.uninstall.toLowerCase()}.`,
+  product.release.unsignedNote,
+  `${product.trial.statusLabel} ${product.trial.supportCta}`
+];
+
+const studioPrinciples = [
+  {
+    title: "Focused software",
+    body: "The studio ships practical desktop tools with one clear job, direct setup notes, and support paths that are visible before purchase."
+  },
+  {
+    title: "Local-first control",
+    body: "The product direction favors Windows workflows where creators keep more of the process on their own machine."
+  },
+  {
+    title: "Honest AI tools",
+    body: "Product pages state what works today, what needs FFmpeg, and what is not public yet."
+  }
+];
 ---
 
 <BaseLayout
-  title="EDITH Dev Studio — Premium Windows-first desktop tools"
-  description="EDITH Dev Studio is building premium Windows-first desktop software. Discover Upscaler Studio, our featured local-first AI upscaling product."
+  title={`${product.studioName} — Premium creative software for Windows`}
+  description={`${product.studioName} publishes Windows-first creative software. ${product.name} is the flagship product: ${product.headline}`}
 >
   <div class="site-shell">
     <Navbar />
 
-    <main>
+    <main class="home-page">
       <Hero />
       <TrustStrip />
 
-      <section class="section">
-        <div class="container">
-          <div class="section-head">
-            <p class="eyebrow">Featured product</p>
-            <h2>One publisher. One flagship product. A clear direction.</h2>
+      <section class="section home-flagship-section">
+        <div class="container home-flagship-grid">
+          <div class="home-section-copy">
+            <p class="eyebrow">Flagship product</p>
+            <h2>{product.name} carries the current product story.</h2>
             <p class="lead">
-              EDITH Dev Studio is the publisher brand. Upscaler Studio is the first featured product: a local-first Windows desktop tool designed for serious image and video upscaling workflows.
+              {product.primaryMessage} The homepage keeps the studio premium and clear, then sends serious buyers to the dedicated product page.
             </p>
+
+            <div class="cta-row">
+              <a href={links.productPage} class="btn btn-primary">View product</a>
+              <a href={links.checkout.href} class="btn btn-secondary">Buy lifetime license</a>
+            </div>
           </div>
 
-          <div class="product-band product-band-home">
-            <div class="grid-2">
-              <div>
-                <h3>Why the structure matters</h3>
-                <p class="muted" style="margin-top: .75rem;">
-                  Keeping publisher and product distinct makes the site easier to scale, easier to understand, and more credible for future launches.
-                </p>
-
-                <ul class="checks">
-                  <li>EDITH Dev Studio stays the umbrella brand</li>
-                  <li>Upscaler Studio gets a dedicated product surface</li>
-                  <li>The homepage stays focused on hierarchy and clarity</li>
-                </ul>
-              </div>
-
-              <div>
-                <h3>Why Upscaler Studio leads</h3>
-                <p class="muted" style="margin-top: .75rem;">
-                  The first product page should quickly explain local-first value, workflow seriousness, and the intended launch model without overclaiming availability.
-                </p>
-
-                <div class="cta-row" style="margin-top: 1.25rem;">
-                  <a href="/products/upscaler-studio" class="btn btn-primary">View product</a>
-                  <a href="/about" class="btn btn-secondary">About the studio</a>
-                </div>
-              </div>
+          <div class="home-product-panel" aria-label={`${product.name} product facts`}>
+            <div class="home-product-panel-head">
+              <span>{product.offer.label}</span>
+              <strong>{product.name}</strong>
             </div>
+            <ul class="home-fact-list">
+              {productFacts.map((fact) => <li>{fact}</li>)}
+            </ul>
           </div>
         </div>
       </section>
 
       <FeatureGrid />
-      <PricingPreview />
-      <DownloadPanel />
 
-      <section class="section alt">
+      <section class="section alt home-proof-section">
         <div class="container">
           <div class="section-head">
-            <p class="eyebrow">Studio direction</p>
-            <h2>Designed as a product site first, not a throwaway landing page.</h2>
+            <p class="eyebrow">Product surfaces</p>
+            <h2>Visual proof slots without borrowed assets.</h2>
             <p class="lead">
-              The current goal is a premium foundation: stronger hierarchy, clearer messaging, and a more serious surface for future screenshots, legal pages, support, and checkout integration.
+              Until real screenshots are supplied, the site uses internal product frames that reserve space for the workspace, image comparison, and release setup story.
             </p>
           </div>
 
-          <div class="grid-3">
-            <article class="card">
-              <h3>Stronger hierarchy</h3>
-              <p style="margin-top: .7rem;">The homepage should explain the publisher, the featured product, and the local-first value proposition in seconds.</p>
-            </article>
+          <div class="home-proof-grid">
+            <AssetPlaceholder variant="app" />
+            <AssetPlaceholder variant="compare" />
+            <AssetPlaceholder variant="mockup" />
+          </div>
+        </div>
+      </section>
 
-            <article class="card">
-              <h3>More credible product framing</h3>
-              <p style="margin-top: .7rem;">Upscaler Studio should feel like a serious product page now, even before final screenshots and commercial integrations arrive.</p>
-            </article>
+      <PricingPreview />
+      <DownloadPanel />
 
-            <article class="card">
-              <h3>Ready for the next pass</h3>
-              <p style="margin-top: .7rem;">Once release gates are closed, the next layer is final copy, legal refinement, support contact polish, and checkout activation.</p>
-            </article>
+      <section class="section home-studio-section">
+        <div class="container home-studio-grid">
+          <div class="home-section-copy">
+            <p class="eyebrow">Studio philosophy</p>
+            <h2>Practical AI tools with clear ownership and limits.</h2>
+            <p class="lead">
+              {product.studioName} should feel premium because it is precise: it explains the workflow, the setup, and the commercial path before asking for trust.
+            </p>
+          </div>
+
+          <div class="home-principles">
+            {studioPrinciples.map((principle) => (
+              <article>
+                <h3>{principle.title}</h3>
+                <p>{principle.body}</p>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section class="section home-final-section">
+        <div class="container home-final-panel">
+          <div>
+            <p class="eyebrow">Next step</p>
+            <h2>See the product truth before checkout.</h2>
+            <p class="lead">
+              The Upscaler Studio page has the full offer, release notes, setup caveats, support path, and current trial ZIP status in one place.
+            </p>
+          </div>
+
+          <div class="cta-stack">
+            <a href={links.productPage} class="btn btn-primary">View product</a>
+            <a href={links.setupNotes} class="btn btn-secondary">Read setup notes</a>
           </div>
         </div>
       </section>

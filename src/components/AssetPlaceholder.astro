@@ -1,0 +1,76 @@
+---
+interface Props {
+  variant?: "app" | "compare" | "mockup" | "scene";
+}
+
+const { variant = "app" } = Astro.props;
+
+const labels = {
+  app: {
+    title: "App screenshot slot",
+    body: "Replace with an owned Windows app screenshot showing queue, preview, controls, and export state."
+  },
+  compare: {
+    title: "Before / after slot",
+    body: "Replace with owned image enhancement examples. Do not use unlicensed stock or competitor assets."
+  },
+  mockup: {
+    title: "Product mockup slot",
+    body: "Reserve this for an approved app-window mockup, not a generic setup graphic."
+  },
+  scene: {
+    title: "Future interactive slot",
+    body: "Reserved for one future 3D or interactive product section after structure and trust are stable."
+  }
+}[variant];
+---
+
+<article class={`asset-placeholder asset-${variant}`}>
+  <div class="asset-topbar">
+    <span></span>
+    <span></span>
+    <span></span>
+    <strong>{labels.title}</strong>
+  </div>
+
+  {variant === "app" && (
+    <div class="asset-app-grid" aria-hidden="true">
+      <div class="asset-sidebar"><i></i><i></i><i></i></div>
+      <div class="asset-stage">
+        <div class="asset-stage-main"></div>
+        <div class="asset-stage-rail"><span></span><span></span><span></span></div>
+      </div>
+      <div class="asset-toolbar"><span>Input</span><span>Preview</span><span>Export</span></div>
+    </div>
+  )}
+
+  {variant === "compare" && (
+    <div class="asset-compare-grid" aria-hidden="true">
+      <div><span>Before</span></div>
+      <div><span>After</span></div>
+    </div>
+  )}
+
+  {variant === "mockup" && (
+    <div class="asset-release-grid" aria-hidden="true">
+      <div class="asset-release-card"><strong>ZIP</strong><span>Direct release</span></div>
+      <div class="asset-release-card"><strong>Unsigned</strong><span>Windows warning possible</span></div>
+      <div class="asset-release-card"><strong>Manual</strong><span>Install / update / uninstall</span></div>
+    </div>
+  )}
+
+  {variant === "scene" && (
+    <div class="asset-scene-grid" aria-hidden="true">
+      <span class="asset-scene-node node-a"></span>
+      <span class="asset-scene-node node-b"></span>
+      <span class="asset-scene-node node-c"></span>
+      <span class="asset-scene-line line-a"></span>
+      <span class="asset-scene-line line-b"></span>
+    </div>
+  )}
+
+  <div class="asset-caption">
+    <h3>{labels.title}</h3>
+    <p>{labels.body}</p>
+  </div>
+</article>
