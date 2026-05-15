@@ -397,7 +397,7 @@ li,
 .product-limit-panel,
 .release-status-panel,
 .support-contact-card,
-.asset-placeholder,
+.asset-frame,
 .home-product-panel,
 .home-final-panel,
 .product-story-panel,
@@ -426,7 +426,7 @@ li,
   .workflow-panel:hover,
   .release-status-panel:hover,
   .support-contact-card:hover,
-  .asset-placeholder:hover,
+  .asset-frame:hover,
   .product-index-facts article:hover {
     transform: translateY(-4px);
     border-color: rgba(124,92,255,0.32);
@@ -769,7 +769,7 @@ li,
 
 .home-product-frame::after,
 .product-workspace-frame::after,
-.asset-placeholder::after {
+.asset-frame::after {
   content: "";
   position: absolute;
   inset: -40% auto -40% -35%;
@@ -779,7 +779,7 @@ li,
   pointer-events: none;
 }
 
-.asset-placeholder {
+.asset-frame {
   position: relative;
 }
 
@@ -792,7 +792,7 @@ li,
 
   .home-hero-visual:hover .home-product-frame::after,
   .product-hero-visual:hover .product-workspace-frame::after,
-  .asset-placeholder:hover::after {
+  .asset-frame:hover::after {
     opacity: 1;
     animation: premium-sheen 1100ms var(--ease-premium) both;
   }
@@ -1077,8 +1077,8 @@ li,
   grid-template-columns: 1.15fr repeat(3, minmax(0, .9fr));
 }
 
-.home-proof-grid .asset-placeholder,
-.product-proof-grid .asset-placeholder {
+.home-proof-grid .asset-frame,
+.product-proof-grid .asset-frame {
   min-height: 420px;
 }
 
@@ -1397,9 +1397,9 @@ li,
   color: var(--muted);
 }
 
-/* Asset placeholders */
+/* Asset frames */
 
-.asset-placeholder {
+.asset-frame {
   position: relative;
   min-height: 100%;
   border: 1px solid var(--line);
@@ -1414,7 +1414,7 @@ li,
   isolation: isolate;
 }
 
-.asset-placeholder::before {
+.asset-frame::before {
   content: "";
   position: absolute;
   inset: 1px;
@@ -2088,8 +2088,8 @@ li,
     min-height: 180px;
   }
 
-  .home-proof-grid .asset-placeholder,
-  .product-proof-grid .asset-placeholder {
+  .home-proof-grid .asset-frame,
+  .product-proof-grid .asset-frame {
     min-height: 0;
   }
 
@@ -2139,7 +2139,7 @@ li,
   .workflow-panel:hover,
   .release-status-panel:hover,
   .support-contact-card:hover,
-  .asset-placeholder:hover,
+  .asset-frame:hover,
   .product-index-facts article:hover,
   .home-signal:hover,
   .product-signal:hover,
@@ -2156,7 +2156,7 @@ li,
 
   .home-product-frame::after,
   .product-workspace-frame::after,
-  .asset-placeholder::after {
+  .asset-frame::after {
     display: none;
   }
 }

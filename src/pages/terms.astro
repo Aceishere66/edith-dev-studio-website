@@ -2,6 +2,8 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
+import { links } from '../config/links';
+import { product } from '../config/product';
 ---
 
 <BaseLayout title="Terms of Service | EDITH Dev Studio" description="Read the terms of service for EDITH Dev Studio and Upscaler Studio.">
@@ -12,25 +14,30 @@ import Footer from '../components/Footer.astro';
       <p class="eyebrow">Legal</p>
       <h1>Terms of Service</h1>
       <p class="hero-copy" style="max-width:860px;">
-        Current public product terms are summarized here for clarity. Final legal review is still required.
+        These terms summarize the current public access path and release expectations for Upscaler Studio.
       </p>
 
       <div class="legal-stack">
         <section class="legal-block">
           <h2>1. Product scope</h2>
-          <p>Upscaler Studio is software licensed to the user under the final commercial terms of the published release.</p>
+          <p>{product.name} is a Windows desktop product published by {product.studioName}. The current release is a direct ZIP package with manual install, update, and uninstall expectations.</p>
         </section>
         <section class="legal-block">
           <h2>2. License model</h2>
-          <p>The current public purchase path is a €30 lifetime license. The public trial build is not available yet.</p>
+          <p>The current public purchase path is a {product.offer.label} license through the EDITH Dev Studio storefront. The public trial build is not available yet.</p>
         </section>
         <section class="legal-block">
           <h2>3. Payments and refunds</h2>
-          <p>Purchases are routed through the EDITH Dev Studio Lemon Squeezy storefront. Current public copy states no refund after purchase; this wording needs professional legal review.</p>
+          <p>Purchases are routed through the EDITH Dev Studio Lemon Squeezy storefront. {product.offer.refundPolicy}; review the setup notes before buying.</p>
+          <p><a href={links.checkout.href}>Open the Lemon Squeezy storefront</a></p>
         </section>
         <section class="legal-block">
-          <h2>4. Third-party components</h2>
-          <p>Do not claim exclusive rights over bundled third-party components where their own licenses apply.</p>
+          <h2>4. Release requirements</h2>
+          <p>The current Windows ZIP release is unsigned. Image workflows work out of the box. Video workflows require external FFmpeg before use.</p>
+        </section>
+        <section class="legal-block">
+          <h2>5. Support and third-party tools</h2>
+          <p>For license, setup, storefront, release, or FFmpeg questions, contact <a href={`mailto:${product.support.email}`}>{product.support.email}</a>. Third-party tools such as FFmpeg are governed by their own licenses and terms.</p>
         </section>
       </div>
     </div>

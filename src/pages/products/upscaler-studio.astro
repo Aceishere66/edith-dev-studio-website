@@ -2,7 +2,7 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import Navbar from '../../components/Navbar.astro';
 import Footer from '../../components/Footer.astro';
-import AssetPlaceholder from '../../components/AssetPlaceholder.astro';
+import AssetFrame from '../../components/AssetFrame.astro';
 import { links } from '../../config/links';
 import { product } from '../../config/product';
 
@@ -323,10 +323,10 @@ const faqItems = [
           </div>
 
           <div class="product-proof-grid">
-            <AssetPlaceholder variant="app" />
-            <AssetPlaceholder variant="compare" />
-            <AssetPlaceholder variant="mockup" />
-            <AssetPlaceholder variant="scene" />
+            <AssetFrame variant="app" />
+            <AssetFrame variant="compare" />
+            <AssetFrame variant="mockup" />
+            <AssetFrame variant="scene" />
           </div>
         </div>
       </section>
