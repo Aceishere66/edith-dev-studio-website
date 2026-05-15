@@ -1,42 +1,73 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
-import Header from '../components/Header.astro';
+import Navbar from '../components/Navbar.astro';
 import Footer from '../components/Footer.astro';
+import { links } from '../config/links';
+import { product } from '../config/product';
 ---
 
-<BaseLayout title="Download Upscaler Studio | EDITH Dev Studio" description="Download Upscaler Studio for Windows and explore a local AI upscaling workflow for images and video.">
-  <Header />
+<BaseLayout
+  title={`Download and Setup — ${product.name} | ${product.studioName}`}
+  description={`${product.name} download and setup guidance: current access, Windows direct ZIP expectations, manual setup, and support.`}
+>
+  <div class="site-shell">
+    <Navbar />
 
-  <section class="legal-page">
-    <div class="narrow">
-      <p class="eyebrow">Download</p>
-      <h1>Get Upscaler Studio for Windows.</h1>
-      <p class="hero-copy" style="max-width:860px;">
-        Keep this page ready now, then connect the real installer and release notes when the software side clears the mandatory release gates.
-      </p>
+    <main class="companion-page">
+      <section class="section page-top-safe">
+        <div class="container companion-split">
+          <div>
+            <p class="eyebrow">Download and setup</p>
+            <h1>Download and setup guidance for the current release.</h1>
+            <p class="lead">
+              Current public access is handled through the product page and storefront. The public trial build is not available yet; setup guidance is available before purchase.
+            </p>
+            <div class="cta-row">
+              <a href={links.productPage} class="btn btn-primary">View product page</a>
+              <a href={links.checkout.href} class="btn btn-secondary">Buy lifetime license</a>
+              <a href={links.supportDownload} class="btn btn-secondary">Contact support</a>
+            </div>
+          </div>
 
-      <div class="grid-2" style="margin-top:2rem;">
-        <article class="card">
-          <h2>Trial build</h2>
-          <p class="copy" style="margin-top:1rem;">Version: <strong>v0.1.0</strong></p>
-          <p class="copy">Platform: Windows 10 / 11 64-bit</p>
-          <p class="copy">Channel: draft placeholder</p>
-          <div class="cta-row"><a class="btn btn-primary" href="#">Download installer</a></div>
-        </article>
+          <article class="release-status-panel">
+            <span class="badge">Current release access</span>
+            <h2>Trial build availability</h2>
+            <p>{product.trial.zipStatus}</p>
+            <p>{product.offer.publicPurchaseFlow}</p>
+          </article>
+        </div>
+      </section>
 
-        <article class="card">
-          <h2>Before publishing</h2>
-          <ul class="checks">
-            <li>Connect real installer URL</li>
-            <li>Add checksum if desired</li>
-            <li>Link changelog</li>
-            <li>Confirm support channel</li>
-          </ul>
-        </article>
-      </div>
-    </div>
-  </section>
+      <section class="section alt">
+        <div class="container grid-3">
+          <article class="card">
+            <h3>{product.release.distribution}</h3>
+            <p>The release path is direct and practical, with setup notes visible before purchase.</p>
+          </article>
+          <article class="card">
+            <h3>Unsigned release</h3>
+            <p>{product.release.unsignedNote}</p>
+          </article>
+          <article class="card">
+            <h3>Manual app management</h3>
+            <p>{product.release.install}, {product.release.update}, and {product.release.uninstall}.</p>
+          </article>
+          <article class="card">
+            <h3>Image workflows</h3>
+            <p>{product.workflows.image}</p>
+          </article>
+          <article class="card">
+            <h3>Video workflows</h3>
+            <p>{product.workflows.video}</p>
+          </article>
+          <article class="card">
+            <h3>Purchase path</h3>
+            <p>Purchase through Lemon Squeezy after reviewing the setup notes and confirming the current release fits your workflow.</p>
+          </article>
+        </div>
+      </section>
+    </main>
 
-  <Footer />
+    <Footer />
+  </div>
 </BaseLayout>
-

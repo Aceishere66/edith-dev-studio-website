@@ -1,19 +1,22 @@
+---
+import { links } from "../config/links";
+import { product } from "../config/product";
+---
+
 <section class="section alt">
   <div class="container">
-    <div class="cta-panel" style="padding: 1.5rem;">
-      <div class="grid-2">
-        <div>
-          <p class="eyebrow">Release path</p>
-          <h2>Polish the site now. Open trial and checkout when the product is ready.</h2>
-          <p class="lead">
-            The website can signal serious intent without pretending that packaging, compliance, and release-quality gates are already finished.
-          </p>
-        </div>
+    <div class="cta-panel release-panel">
+      <div>
+        <p class="eyebrow">Release path</p>
+        <h2>Download and setup guidance for the current release.</h2>
+        <p class="lead">
+          Current access starts with the product page and storefront. The public trial build is not available yet, and setup notes explain the direct ZIP release before purchase.
+        </p>
+      </div>
 
-        <div class="cta-stack">
-          <a href="/products/upscaler-studio" class="btn btn-primary">View product page</a>
-          <a href="/support" class="btn btn-secondary">Open support</a>
-        </div>
+      <div class="cta-stack">
+        <a href={links.productPage} class="btn btn-primary">View product page</a>
+        <a href={links.supportDownload} class="btn btn-secondary">Download guidance</a>
       </div>
     </div>
   </div>

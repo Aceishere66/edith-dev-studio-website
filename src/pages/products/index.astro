@@ -2,46 +2,90 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import Navbar from '../../components/Navbar.astro';
 import Footer from '../../components/Footer.astro';
+import AssetFrame from '../../components/AssetFrame.astro';
+import { links } from '../../config/links';
+import { product } from '../../config/product';
 ---
 
 <BaseLayout
-  title="Products — EDITH Dev Studio"
-  description="Explore products from EDITH Dev Studio. Upscaler Studio is the first featured product, with more Windows-first desktop tools planned over time."
+  title={`Products — ${product.studioName}`}
+  description={`Explore products from ${product.studioName}. ${product.name} is the flagship product: ${product.headline}`}
 >
   <div class="site-shell">
     <Navbar />
 
-    <main>
-      <section class="section page-top-safe">
-        <div class="container">
-          <div class="section-head">
+    <main class="companion-page">
+      <section class="section page-top-safe companion-hero">
+        <div class="container companion-split">
+          <div>
             <p class="eyebrow">Products</p>
-            <h1>Products</h1>
+            <h1>Focused creative software under one studio brand.</h1>
             <p class="lead">
-              EDITH Dev Studio is being built as a focused product studio. Upscaler Studio is the first featured release in a broader Windows-first desktop direction.
+              {product.studioName} is the publisher. {product.name} is the flagship product and the current path into the studio's local-first Windows software direction.
+            </p>
+            <div class="cta-row">
+              <a href={links.productPage} class="btn btn-primary">View Upscaler Studio</a>
+              <a href={links.checkout.href} class="btn btn-secondary">Buy lifetime license</a>
+            </div>
+          </div>
+
+          <AssetFrame variant="mockup" />
+        </div>
+      </section>
+
+      <section class="section alt">
+        <div class="container product-index-feature">
+          <div>
+            <p class="eyebrow">Flagship</p>
+            <h2>{product.name}</h2>
+            <p class="lead">
+              {product.headline} Built for creators, photographers, Windows users, local-first AI power users, restoration work, image enhancement, and video editors who can install FFmpeg.
             </p>
           </div>
 
-          <div class="grid-2">
-            <article class="card" style="padding: 1.5rem;">
-              <h2 style="font-size: clamp(2.2rem, 6vw, 4rem); line-height: .95;">Upscaler Studio</h2>
-              <p class="lead" style="margin-top: .85rem;">
-                Local AI upscaling for Windows with a premium desktop-product direction focused on image and video workflows.
-              </p>
-
-              <div class="cta-row" style="margin-top: 1.25rem;">
-                <a href="/products/upscaler-studio" class="btn btn-primary">Open product page</a>
-              </div>
+          <div class="product-index-facts">
+            <article>
+              <span>Offer</span>
+              <strong>{product.offer.label}</strong>
+              <p>{product.offer.publicPurchaseFlow}</p>
             </article>
+            <article>
+              <span>Images</span>
+              <strong>Ready</strong>
+              <p>{product.workflows.image}</p>
+            </article>
+            <article>
+              <span>Video</span>
+              <strong>FFmpeg</strong>
+              <p>{product.workflows.video}</p>
+            </article>
+            <article>
+              <span>Release</span>
+              <strong>{product.release.path}</strong>
+              <p>{product.release.distribution}; unsigned and manual.</p>
+            </article>
+          </div>
+        </div>
+      </section>
 
-            <article class="card" style="padding: 1.5rem;">
-              <h3>More products over time</h3>
-              <p style="margin-top: .75rem;">
-                EDITH Dev Studio is intentionally structured as a studio brand, not a single-product microsite. New Windows-first tools can be added under the same publisher identity as the catalogue grows.
-              </p>
-              <p class="muted" style="margin-top: 1rem;">
-                Current focus remains on refining Upscaler Studio and preparing its release path responsibly.
-              </p>
+      <section class="section">
+        <div class="container companion-split">
+          <div>
+            <p class="eyebrow">Catalogue direction</p>
+            <h2>More products can come later. The current focus stays clear.</h2>
+            <p class="lead">
+              The catalogue stays intentionally focused while Upscaler Studio is the active product. Future tools can join this page when they have clear product pages and release details.
+            </p>
+          </div>
+
+          <div class="companion-card-stack">
+            <article class="card">
+              <h3>Current product</h3>
+              <p>{product.name} is the only product being actively sold from the site today.</p>
+            </article>
+            <article class="card">
+              <h3>Future products</h3>
+              <p>New Windows-first creative tools can be added here when they have real product pages and release facts.</p>
             </article>
           </div>
         </div>

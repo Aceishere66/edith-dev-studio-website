@@ -1,0 +1,89 @@
+---
+interface Props {
+  variant?: "app" | "compare" | "mockup" | "scene";
+}
+
+const { variant = "app" } = Astro.props;
+
+const labels = {
+  app: {
+    kicker: "Workspace frame",
+    title: "Windows app workspace",
+    body: "Abstract product frame for the queue, preview, controls, and export areas.",
+    target: "screenshots/upscaler-studio-home-hero.png"
+  },
+  compare: {
+    kicker: "Comparison frame",
+    title: "Before / after layout",
+    body: "Structured comparison surface for owned enhancement examples with clear source and result areas.",
+    target: "before-after/before-after-photo-restoration-01.png"
+  },
+  mockup: {
+    kicker: "Release frame",
+    title: "Direct ZIP release model",
+    body: "Product presentation for the direct ZIP, unsigned Windows release, and manual app management facts.",
+    target: "mockups/upscaler-studio-windows-mockup.png"
+  },
+  scene: {
+    kicker: "Workflow frame",
+    title: "Local workflow map",
+    body: "Abstract map for local processing, image output, optional video tooling, and demo media.",
+    target: "3d/upscaler-studio-interactive-scene-v1.glb"
+  }
+}[variant];
+---
+
+<article
+  class={`asset-frame asset-${variant}`}
+  data-asset-target={labels.target}
+  aria-label={`${labels.title} visual frame`}
+>
+  <div class="asset-topbar">
+    <span></span>
+    <span></span>
+    <span></span>
+    <strong>{labels.kicker}</strong>
+  </div>
+
+  {variant === "app" && (
+    <div class="asset-app-grid" aria-hidden="true">
+      <div class="asset-sidebar"><i></i><i></i><i></i></div>
+      <div class="asset-stage">
+        <div class="asset-stage-main"></div>
+        <div class="asset-stage-rail"><span></span><span></span><span></span></div>
+      </div>
+      <div class="asset-toolbar"><span>Input</span><span>Preview</span><span>Export</span></div>
+    </div>
+  )}
+
+  {variant === "compare" && (
+    <div class="asset-compare-grid" aria-hidden="true">
+      <div><span>Before</span></div>
+      <div><span>After</span></div>
+    </div>
+  )}
+
+  {variant === "mockup" && (
+    <div class="asset-release-grid" aria-hidden="true">
+      <div class="asset-release-card"><strong>ZIP</strong><span>Direct release</span></div>
+      <div class="asset-release-card"><strong>Unsigned</strong><span>Windows warning possible</span></div>
+      <div class="asset-release-card"><strong>Manual</strong><span>Install / update / uninstall</span></div>
+    </div>
+  )}
+
+  {variant === "scene" && (
+    <div class="asset-scene-grid" aria-hidden="true">
+      <span class="asset-scene-node node-a"></span>
+      <span class="asset-scene-node node-b"></span>
+      <span class="asset-scene-node node-c"></span>
+      <span class="asset-scene-line line-a"></span>
+      <span class="asset-scene-line line-b"></span>
+    </div>
+  )}
+
+  <div class="asset-caption">
+    <span>{labels.kicker}</span>
+    <h3>{labels.title}</h3>
+    <p>{labels.body}</p>
+  </div>
+</article>

@@ -1,53 +1,72 @@
-<section class="hero">
-  <div class="orb one"></div>
-  <div class="orb two"></div>
+---
+import { links } from "../config/links";
+import { product } from "../config/product";
+---
 
-  <div class="container hero-grid">
-    <div>
-      <p class="eyebrow">EDITH Dev Studio · Featured product</p>
-      <h1>Local-first AI upscaling for Windows.</h1>
+<section class="hero home-hero">
+  <div class="home-hero-field" aria-hidden="true"></div>
+
+  <div class="container home-hero-grid">
+    <div class="home-hero-copy">
+      <p class="eyebrow">{product.studioName} · Creative software publisher</p>
+      <h1>Focused creative software for local-first visual work.</h1>
       <p class="hero-copy">
-        Upscaler Studio is the first featured product from EDITH Dev Studio: a premium desktop tool direction for image and video upscaling, designed around local processing, clearer control, and a more serious workflow surface.
+        {product.studioName} builds precise Windows-first tools for creators who want control, clarity, and practical AI workflows. {product.name} is the flagship product: {product.headline}
       </p>
 
       <div class="cta-row">
-        <a href="/products/upscaler-studio" class="btn btn-primary">Explore Upscaler Studio</a>
-        <a href="/products" class="btn btn-secondary">Browse products</a>
+        <a href={links.productPage} class="btn btn-primary">View product</a>
+        <a href={links.checkout.href} class="btn btn-secondary">Buy lifetime license</a>
       </div>
 
-      <div class="metrics">
-        <div class="metric">
-          <h3>Publisher</h3>
-          <p class="muted">EDITH Dev Studio</p>
-        </div>
-        <div class="metric">
-          <h3>Featured product</h3>
-          <p class="muted">Upscaler Studio</p>
-        </div>
-        <div class="metric">
-          <h3>Positioning</h3>
-          <p class="muted">Local-first desktop workflow</p>
-        </div>
+      <p class="support-note">
+        Active public purchase path: {product.offer.label} through the EDITH Dev Studio storefront. {product.trial.statusLabel}
+      </p>
+
+      <div class="home-hero-facts" aria-label="Product facts">
+        <span>{product.platform}</span>
+        <span>{product.release.path}</span>
+        <span>{product.release.distribution}</span>
+        <span>{product.workflows.videoShort}</span>
       </div>
     </div>
 
-    <div class="hero-card float-panel">
-      <div class="window-dots">
-        <span></span><span></span><span></span>
-      </div>
-
-      <div class="preview-grid">
-        <div class="preview-box input">Source media</div>
-
-        <div class="process-card">
-          <strong>Workflow direction</strong>
-          <p class="muted" style="margin-top: .35rem;">
-            Queue, review, compare, and export from one premium Windows-first product surface.
-          </p>
-          <div class="progress"><i></i></div>
+    <div class="home-hero-visual" aria-label={`${product.name} abstract product preview`}>
+      <div class="home-product-frame">
+        <div class="home-frame-top">
+          <span></span>
+          <span></span>
+          <span></span>
+          <strong>{product.name}</strong>
         </div>
 
-        <div class="preview-box output">Enhanced result</div>
+        <div class="home-frame-body">
+          <div class="home-frame-sidebar">
+            <span>Local</span>
+            <span>Queue</span>
+            <span>Export</span>
+          </div>
+
+          <div class="home-preview-stack">
+            <div class="home-preview-before">
+              <small>Original</small>
+            </div>
+            <div class="home-preview-after">
+              <small>Enhanced</small>
+            </div>
+          </div>
+        </div>
+
+        <div class="home-frame-status">
+          <div>
+            <span class="home-status-dot"></span>
+            <strong>Images ready out of the box</strong>
+          </div>
+          <div>
+            <span class="home-status-dot warn"></span>
+            <strong>Video requires FFmpeg</strong>
+          </div>
+        </div>
       </div>
     </div>
   </div>

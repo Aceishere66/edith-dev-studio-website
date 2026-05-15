@@ -1,20 +1,43 @@
+---
+import { links } from "../config/links";
+import { product } from "../config/product";
+
+const currentPath = Astro.url.pathname.replace(/\/$/, "") || "/";
+const navItems = [
+  { href: links.home, label: "Home" },
+  { href: links.products, label: "Products" },
+  { href: links.productPage, label: product.name },
+  { href: links.supportPage, label: "Support" },
+  { href: "/about", label: "About" }
+];
+
+const isActive = (href: string) => {
+  const normalized = href.replace(/\/$/, "") || "/";
+  return currentPath === normalized;
+};
+---
+
 <header class="site-header">
   <div class="container nav">
-    <a href="/" class="brand" aria-label="EDITH Dev Studio home">
+    <a href={links.home} class="brand" aria-label={`${product.studioName} home`}>
       <span class="brand-mark">E</span>
       <span>
         <small>Publisher</small>
-        <strong>EDITH Dev Studio</strong>
+        <strong>{product.studioName}</strong>
       </span>
     </a>
 
     <nav class="nav-links" aria-label="Primary">
-      <a href="/">Home</a>
-      <a href="/products">Products</a>
-      <a href="/products/upscaler-studio">Upscaler Studio</a>
-      <a href="/about">About</a>
-      <a href="/support">Support</a>
-      <a href="/products/upscaler-studio" class="btn btn-secondary nav-cta">View product</a>
+      {navItems.map((item) => (
+        <a
+          href={item.href}
+          class={`nav-link${isActive(item.href) ? " is-active" : ""}`}
+          aria-current={isActive(item.href) ? "page" : undefined}
+        >
+          {item.label}
+        </a>
+      ))}
+      <a href={links.productPage} class="btn btn-secondary nav-cta">View product</a>
     </nav>
   </div>
 </header>

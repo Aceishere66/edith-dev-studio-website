@@ -1,54 +1,65 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
-import Header from '../components/Header.astro';
+import Navbar from '../components/Navbar.astro';
 import Footer from '../components/Footer.astro';
+import { links } from '../config/links';
+import { product } from '../config/product';
 ---
 
-<BaseLayout title="Pricing — Upscaler Studio | EDITH Dev Studio" description="See pricing for Upscaler Studio by EDITH Dev Studio, a local AI upscaling tool for Windows.">
-  <Header />
+<BaseLayout
+  title={`Pricing — ${product.name} | ${product.studioName}`}
+  description={`${product.name} pricing: ${product.offer.label}, Lemon Squeezy purchase path, no refund after purchase, and setup notes before checkout.`}
+>
+  <div class="site-shell">
+    <Navbar />
 
-  <section class="legal-page">
-    <div class="narrow">
-      <p class="eyebrow">Pricing</p>
-      <h1>Simple launch pricing.</h1>
-      <p class="hero-copy" style="max-width:860px;">
-        Start with one clear paid plan and one free trial path. That is the strongest commercial strategy for the current product stage.
-      </p>
+    <main class="companion-page">
+      <section class="section page-top-safe">
+        <div class="container companion-split">
+          <div>
+            <p class="eyebrow">Pricing</p>
+            <h1>Straightforward lifetime pricing for {product.name}.</h1>
+            <p class="lead">
+              The active public offer is a {product.offer.label} license through Lemon Squeezy. Review the product page for setup details, limitations, and support paths before purchase.
+            </p>
+            <div class="cta-row">
+              <a href={links.checkout.href} class="btn btn-primary">Buy lifetime license</a>
+              <a href={links.productPricing} class="btn btn-secondary">View full product details</a>
+            </div>
+          </div>
 
-      <div class="pricing-grid" style="margin-top:2rem;">
-        <article class="price-card">
-          <p class="eyebrow">Trial</p>
-          <div class="price">Free</div>
-          <p class="copy" style="margin-top:.7rem;">Best for testing image quality, speed, and compatibility before buying.</p>
-          <ul class="price-list">
-            <li>Evaluation download</li>
-            <li>Low-friction onboarding</li>
-            <li>Trust-building first step</li>
-          </ul>
-          <div class="cta-row"><a class="btn btn-secondary" href="/download">Download trial</a></div>
-        </article>
+          <article class="price-card featured companion-price">
+            <span class="badge">Active public offer</span>
+            <h2>{product.name}</h2>
+            <div class="price">{product.offer.price}</div>
+            <p class="muted">{product.offer.term} license. {product.offer.refundPolicy}.</p>
+            <ul class="price-list">
+              <li>{product.workflows.image}</li>
+              <li>{product.release.distribution}</li>
+              <li>{product.trial.statusLabel}</li>
+            </ul>
+          </article>
+        </div>
+      </section>
 
-        <article class="price-card featured">
-          <span class="badge">Best launch option</span>
-          <p class="eyebrow">Studio License</p>
-          <div class="price">€49</div>
-          <p class="copy" style="margin-top:.7rem;">Recommended opening price while the product matures and the brand builds trust.</p>
-          <ul class="price-list">
-            <li>1 PC license</li>
-            <li>Full export workflow</li>
-            <li>Future upgrade path possible</li>
-          </ul>
-          <div class="cta-row"><a class="btn btn-primary" href="#">Buy with Lemon Squeezy</a></div>
-        </article>
-      </div>
+      <section class="section alt">
+        <div class="container grid-3">
+          <article class="card">
+            <h3>Before buying</h3>
+            <p>Review the unsigned ZIP release, manual app management, and FFmpeg requirement if video workflows matter to you.</p>
+          </article>
+          <article class="card">
+            <h3>Trial status</h3>
+            <p>{product.trial.zipStatus} {product.trial.supportCta}</p>
+          </article>
+          <article class="card">
+            <h3>Support path</h3>
+            <p>Use support for license access, setup questions, unsigned Windows warnings, and FFmpeg guidance.</p>
+          </article>
+        </div>
+      </section>
+    </main>
 
-      <div class="warning-card" style="margin-top:1.5rem;">
-        <strong>Publication note:</strong>
-        checkout links, refund wording, upgrade policy, and support terms still need real release-ready values before going live.
-      </div>
-    </div>
-  </section>
-
-  <Footer />
+    <Footer />
+  </div>
 </BaseLayout>
-
